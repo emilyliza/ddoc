@@ -7,6 +7,5 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
         scrollTop: $panel.offset().top
       }, 500);
 });
-$("#accordion").sortable({
-   handle: ".panel-heading"
-  }); 
+$("#sortable").sortable();
+$("#sortable").disableSelection();
