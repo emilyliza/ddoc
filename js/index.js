@@ -9,6 +9,4 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 });
 $(".panel-collapse").sortable({
     handle: ".panel-heading",
-    animation: 150,
-    draggable: '.panel'
 });
