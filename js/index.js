@@ -8,5 +8,5 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
       }, 500);
 });
 $(".panel-collapse").sortable({
-    handle: ".panel-heading",
+    handle: ".panel-heading"
 });
