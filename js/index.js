@@ -6,12 +6,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
       $('html,body').animate({
         scrollTop: $panel.offset().top
       }, 500);
-})
-.sortable({
-                axis: 'y',
-                handle: 'h4',
-                stop: function(event, ui)
-                {
-                    ui.item.children( "h4" ).triggerHandler( "focusout" );
-                }
-            });
+});
+$("#accordion").sortable({
+   handle: ".panel-heading"
+  }); 
