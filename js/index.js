@@ -8,4 +8,3 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
       }, 500);
 });
 $("#sortable").sortable();
-$("#sortable").disableSelection();
