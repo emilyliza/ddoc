@@ -7,4 +7,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
         scrollTop: $panel.offset().top
       }, 500);
 });
-$("#sortable").sortable();
+$("#sortable").sortable({
+    axis: "y",
+    handle: "h4"
+});
