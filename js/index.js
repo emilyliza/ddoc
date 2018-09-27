@@ -7,7 +7,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
         scrollTop: $panel.offset().top
       }, 500);
 });
-$("#sortable").sortable({
+$(".panel-collapse").sortable({
     handle: ".panel-heading",
     animation: 150,
     draggable: '.panel'
