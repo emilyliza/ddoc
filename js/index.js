@@ -8,6 +8,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
       }, 500);
 });
 $("#sortable").sortable({
-    axis: "y",
-    handle: "h4"
+    handle: ".panel-heading",
+    animation: 150,
+    draggable: '.panel'
 });
