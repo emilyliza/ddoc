@@ -33,7 +33,7 @@ var html = $.map(cat, function(body, category) {
     return "<h3>" + category + "</h3>" +
         "<div>" + $.map(body, function(item, i) {
             console.log(i, item)
-            return "<h5>" + item[i].solution + "</h5>" +
+            return "<h5>" + item[i]["solution"] + "</h5>" +
                 "<div>" + item[i].description + "</div>"
         }).join("") + "</div>"
 }).join("")
