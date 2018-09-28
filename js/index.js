@@ -27,16 +27,12 @@ data.forEach(function(item) {
         cat[item.sector] = [item]
     else
         cat[item.sector].push(item)
-});
+})
 
 var count = 0;
 var html = $.map(cat, function(body, category) {
     count += 1;
-    return '<div class="panel-heading" role="tab" id="heading-"' + count + '>
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">'
-
-
+    return '<div class="panel-heading" role="tab" id="heading-"' + count + '><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">'
     + category + "</a></h4></div>" +
         "<div>" + $.map(body, function(item, i) {
             return "<h5>" + item.solution + "</h5>" +
