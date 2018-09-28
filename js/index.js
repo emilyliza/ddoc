@@ -1,7 +1,7 @@
 
 var solutions = [
-{ sector: "Land Use" {solution: "solution1"}
-  ,
+{ sector: "Land Use",
+   solution: "solution1",
   description: "solution description hggfghf"
 },
 { sector: "Land Use",
