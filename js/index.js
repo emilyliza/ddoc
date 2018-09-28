@@ -28,22 +28,29 @@ data.forEach(function(item) {
     else
         cat[item.sector].push(item)
 })
-console.log(cat)
+
+var count = 0;
 var html = $.map(cat, function(body, category) {
-    return "<h3>" + category + "</h3>" +
+    count += 1;
+    return '<div class="panel-heading" role="tab" id="heading-"' + count + '>
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">'
+
+
+    + category + "</a></h4></div>" +
         "<div>" + $.map(body, function(item, i) {
-            console.log(i, item)
             return "<h5>" + item.solution + "</h5>" +
                 "<div>" + item.description + "</div>"
         }).join("") + "</div>"
 }).join("")
+
 $(function(){
 $("#userAlertsWrapper").append(html)
 
-$("#userAlertsWrapper").children("div").children("div").accordion()
-$("#userAlertsWrapper").children("div").accordion()
+// $("#userAlertsWrapper").children("div").children("div").accordion()
+// $("#userAlertsWrapper").children("div").accordion()
 
-$("#userAlertsWrapper").accordion()
+// $("#userAlertsWrapper").accordion()
 
 });
 
