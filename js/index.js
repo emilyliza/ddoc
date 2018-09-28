@@ -27,7 +27,7 @@ data.forEach(function(item) {
         cat[item.sector] = [item]
     else
         cat[item.sector].push(item)
-})
+});
 
 var count = 0;
 var html = $.map(cat, function(body, category) {
