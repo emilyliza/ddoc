@@ -35,8 +35,8 @@ var html = $.map(cat, function(body, category) {
     return '<div class="bs-example" data-example-id="collapse-accordion">
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default"><div class="panel-heading" role="tab" id="heading-' + count + '"><h4 class="panel-title"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">'
-    + category + "</a></h4></div>" +
-        '<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false">
+    + category + '</a></h4></div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false">
                         <div class="panel-body">
                             <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
                                 <div class="panel panel-default">
