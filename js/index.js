@@ -22,7 +22,6 @@ var solutions = [
 }
 ];
 
-<script src="script.js"></script>
        var json = {
         residus: [
             {
