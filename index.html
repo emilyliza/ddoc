@@ -10,12 +10,50 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script src="script.js"></script>
+      <script src="index.js"></script>
       <style>
           div.templateContainer {
             display: none;
           }
     </style>
     <script>
+       var json = {
+        residus: [
+            {
+              name:'1 level XXX ', childs: [
+                {name:'element 1.1', childs: null},
+                {name:'element 1.2 jh', childs: null}
+              ]
+            },
+            {
+              name:'1 level  ', childs: [
+                {name:'element 1.1', childs: null},
+                {name:'element 1.2 jh', childs: [
+                      {
+                          name:'element 2.1.1', childs:null
+                          
+                        },
+                        {
+                          name:'element 2.1.2', childs:null
+                          
+                        }
+                      ]}
+              ]
+            },
+            {
+              name:'2 level 1.. ', childs: [
+                {
+                  name:'element 2.1', url: "json.js"
+                }
+              ]
+            },
+            {
+                name:'2 level 1.. ',   url: "json1.js" 
+              }
+          ]
+      };
+      
+       
     var collapseTemplate = Object.create(CollapseTemplate);
     var params = {
         templateSelector: 'div.templateContainer > div.template',
@@ -30,8 +68,11 @@
       $("button").on("click", function(){
         json.residus[0].name="Xavi Abarca";
         collapseTemplate.load(json);
-      });  
+      });
+        
   });
+        
+
     </script>
   </head>
   
@@ -62,7 +103,7 @@
   <div class="panel-group" role="tablist" id="accordion">
 
   </div>
-<!--  <button type="button" class="btn btn-success">Change JSON</button> -->
+ <button type="button" class="btn btn-success">Change JSON</button>
 </div>
 </div>
 <br><br>
