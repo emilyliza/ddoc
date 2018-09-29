@@ -77,39 +77,6 @@ var solutions = [
         
   });
         
-  
-
-    <style>
-    
-    div.templateContainer {
-      display: none;
-    }
-
-    </style>
-  </head>
-
-  <body>
-
-<div class="templateContainer">
-  <div class="panel panel-default template">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title"><input type="checkbox"/>
-        <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body"></div>
-    </div>
-  </div>
-</div>
-<br><br>
-<div class="container">
-  <div class="panel-group" role="tablist" id="accordion">
-
-//   </div>
-//  <button type="button" class="btn btn-success">Change JSON</button>
-// </div>
 
 $('.panel-collapse').on('shown.bs.collapse', function(e) {
     e.preventDefault();  
