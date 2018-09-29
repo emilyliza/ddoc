@@ -9,6 +9,32 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="script.js"></script>
+      <style>
+          div.templateContainer {
+            display: none;
+          }
+    </style>
+    <script>
+    var collapseTemplate = Object.create(CollapseTemplate);
+    var params = {
+        templateSelector: 'div.templateContainer > div.template',
+        parentId: 'accordion'
+     };
+    
+    jQuery(document).ready( function() {
+
+      collapseTemplate.init(params);
+      collapseTemplate.load(json);
+      
+      // $("button").on("click", function(){
+      //   json.residus[0].name="Xavi Abarca";
+      //   collapseTemplate.load(json);
+      // });
+        
+  });
+    </script>
+  </head>
   
 </head>
 
@@ -31,6 +57,14 @@
       <div class="panel-body"></div>
     </div>
   </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="panel-group" role="tablist" id="accordion">
+
+  </div>
+<!--  <button type="button" class="btn btn-success">Change JSON</button> -->
+</div>
 </div>
 <br><br>
 <div class="container">
