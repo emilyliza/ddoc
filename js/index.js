@@ -22,8 +22,6 @@ var solutions = [
 }
 ];
 
-<script src="script.js"></script>
-    <script>
        var json = {
         residus: [
             {
@@ -50,34 +48,18 @@ var solutions = [
             {
               name:'2 level 1.. ', childs: [
                 {
-                  name:'element 2.1', url: "json.js"
+                  name:'element 2.1', childs:null
                 }
               ]
             },
             {
-                name:'2 level 1.. ',   url: "json1.js" 
+                name:'2 level 1.. ',   childs:null
               }
           ]
       };
       
        
-    var collapseTemplate = Object.create(CollapseTemplate);
-    var params = {
-        templateSelector: 'div.templateContainer > div.template',
-        parentId: 'accordion'
-     };
     
-    jQuery(document).ready( function() {
-
-      collapseTemplate.init(params);
-      collapseTemplate.load(json);
-      
-      $("button").on("click", function(){
-        json.residus[0].name="Xavi Abarca";
-        collapseTemplate.load(json);
-      });
-        
-  });
         
 
     </script>
