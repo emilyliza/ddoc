@@ -48,12 +48,12 @@ var solutions = [
             {
               name:'2 level 1.. ', childs: [
                 {
-                  name:'element 2.1', childs:null
+                  name:'element 2.1', url: "json.js"
                 }
               ]
             },
             {
-                name:'2 level 1.. ',   childs:null
+                name:'2 level 1.. ',   url: "json1.js" 
               }
           ]
       };
