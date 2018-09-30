@@ -43,7 +43,6 @@ var CollapseTemplate = {
 		this.params = Utils.extend({}, this.params, _params);
 	},
 	
-	
 	load : function(json) {
 		$("#" + this.params.parentId).empty();
 		var _this = this;
@@ -52,6 +51,7 @@ var CollapseTemplate = {
 		});
 	},
 
+  //create panel
 	draw : function(name, childs, panel, description) {
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
@@ -89,60 +89,14 @@ var CollapseTemplate = {
 
 		$.each(childs, function(i, val) {
 			if (val.childs !== null) {
-				_this.draw(val.name, val.childs, $newPanel, val.description);
-			// } else if (val.childs === null && val.url !== undefined && val.url !== null) {
-			// 	$newPanel.find(".panel-title").append("<input type='checkbox'/>");
-			// 	$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
-			// 	$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
-			// 		var jqxhr = Utils.doAjax({}, val.url);
-			// 		jqxhr.done(function(dades) {
-			// 			var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
-			// 			$(panel).empty();
-			// 			$.each(dades.residus, function(i, val) {
-			// 				if(val.url===undefined || val.url===null)	{
-			// 					$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
-			// 				}	else	{
-			// 					_this.draw(val.name, null, $("#panel"+numId), val.url);
-			// 				}
-			// 			});
-			// 			$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
-			// 		});
-			// 	});
-				
+				_this.draw(val.name, val.childs, undefined, val.description);
+				// _this.draw(val.name, val.childs, $newPanel, val.description);
 			} else {
 				$newPanel.find(".panel-body").append( val.name, val.description );
 			}
 		});
 
 	}
-	
-	// "<ul class='list-group'><li class='list-group-item'>"
-	// "</li></ul>"
-	
-	// drawChildNodesAjax : function(url, $newPanel, numId) {
-	// 	var _this = this;
-	// 	$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
-		
-	// 	$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
-			
-	// 		var jqxhr = Utils.doAjax({}, url);
-			
-	// 		jqxhr.done(function(dades) {
-	// 			var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
-	// 			$(panel).empty();
-	// 			$.each(dades.residus, function(i, val) {
-	// 				if(val.url===undefined || val.url===null)	{
-	// 					$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
-	// 				}	else	{
-	// 					_this.draw(val.name, null, $("#panel"+numId), val.url);
-	// 				}
-	// 			});
-	// 			$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
-	// 		});
-	// 	});
-
-	// }
-
 };
 
 Global =	{
@@ -163,15 +117,4 @@ Utils = {
 		return dest;
 	}
 
-	// doAjax : function(params, _url) {
-	// 	return $.ajax({
-	// 		url : _url,
-	// 		dataType : 'json',
-	// 		data : params,
-	// 		cache : false,
-	// 		error : function(jqXHR, textStatus, errorThrown) {
-	// 			alert(textStatus);
-	// 		}
-	// 	});
-	// }
 };
