@@ -21,7 +21,7 @@
               ]
             },
             {
-                name:'Transport ',  [
+                name:'Transport ', childs: [
                 {name:'element 1.1', description: "testing", childs: null},
                 {name:'reduced food waste', description: "testing", childs:null}
               ]
