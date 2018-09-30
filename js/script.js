@@ -114,7 +114,7 @@ var CollapseTemplate = {
 			}
 		});
 
-	},
+	}
 	
 	// "<ul class='list-group'><li class='list-group-item'>"
 	// "</li></ul>"
@@ -141,7 +141,7 @@ var CollapseTemplate = {
 	// 		});
 	// 	});
 
-	}
+	// }
 
 };
 
