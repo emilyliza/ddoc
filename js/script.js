@@ -88,12 +88,11 @@ var CollapseTemplate = {
 		var _this = this;
 
 		$.each(childs, function(i, val) {
-			if (val.childs !== null) {
-				_this.draw(val.name, val.childs, undefined, val.description);
-				// _this.draw(val.name, val.childs, $newPanel, val.description);
-			} else {
-				$newPanel.find(".panel-body").append( val.name, val.description );
-			}
+			// if (val.childs !== null) {
+				_this.draw(val.name, val.childs, $newPanel, val.description);
+			// } else {
+			// 	$newPanel.find(".panel-body").append( val.name, val.description );
+			// }
 		});
 
 	}
