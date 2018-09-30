@@ -53,7 +53,6 @@ var CollapseTemplate = {
 	},
 
 	draw : function(name, childs, panel, url) {
-		console.log(childs);
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
