@@ -3,19 +3,12 @@
  var json = {
         residus: [
             {
-              name:'Women and Girls ', childs: [
+              name:'Women and Girls ', 
+
+              childs: [
                 {name:'women share holders', childs: [
-                      {
-                          name:'definition of food waste', childs:null
-                          
-                        }
-                      ]},
-                {name:'something else', childs: [
-                      {
-                          name:'definition of some other food waste', childs:null
-                          
-                        }
-                      ]}  
+                      {name:'definition of food waste', childs:null},
+                      {name:'something else', childs:null }  
               ]
             },
             {
@@ -118,7 +111,6 @@ var CollapseTemplate = {
 			if (val.childs !== null) {
 				_this.draw(val.name, val.childs, $newPanel, val.url);
 			} else if (val.childs === null && val.url !== undefined && val.url !== null) {
-				$newPanel.find(".panel-title").append("<input type='checkbox'/>");
 				$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
 				$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
 					var jqxhr = Utils.doAjax({}, val.url);
