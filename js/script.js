@@ -113,12 +113,14 @@ var CollapseTemplate = {
 				});
 				
 			}else {
-				$newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + "</li></ul>");
+				$newPanel.find(".panel-body").append( val.name );
 			}
 		});
 
 	},
 	
+	// "<ul class='list-group'><li class='list-group-item'>"
+	// "</li></ul>"
 	
 	drawChildNodesAjax : function(url, $newPanel, numId) {
 		var _this = this;
