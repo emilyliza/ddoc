@@ -3,21 +3,17 @@
  var json = {
         residus: [
             {
-              name:'1 level XXX ', childs: [
+              name:'Women and Girls ', childs: [
                 {name:'element 1.1', childs: null},
                 {name:'element 1.2 jh', childs: null}
               ]
             },
             {
-              name:'1 level  ', childs: [
+              name:'Food Waste', childs: [
                 {name:'element 1.1', childs: null},
-                {name:'element 1.2 jh', childs: [
+                {name:'reduced food waste', childs: [
                       {
-                          name:'element 2.1.1', childs:null
-                          
-                        },
-                        {
-                          name:'element 2.1.2', childs:null
+                          name:'definition of food waste', childs:null
                           
                         }
                       ]}
