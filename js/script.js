@@ -3,44 +3,27 @@
  var json = {
         residus: [
             {
-              name:'Women and Girls ', 
-
-              childs: [
-                {name:'women share holders', childs: [
-                      {name:'definition of food waste', childs:null},
-                      {name:'something else', childs:null }  
+              name:'Women and Girls ', childs: [
+                {name:'element 1.1', childs: null},
+                {name:'element 1.2 jh', childs: null}
               ]
             },
             {
               name:'Food Waste', childs: [
+                {name:'element 1.1', childs: null},
                 {name:'reduced food waste', childs: [
                       {
                           name:'definition of food waste', childs:null
                           
                         }
-                      ]},
-                {name:'reduced', childs: [
-                      {
-                          name:'definition of some other food waste', childs:null
-                          
-                        }
-                      ]}      
+                      ]}
               ]
             },
             {
               name:'Energy ', childs: [
-                {name:'electric bikes', childs: [
-                      {
-                          name:'definition of food waste', childs:null
-                          
-                        }
-                      ]},
-                {name:'buildings', childs: [
-                      {
-                          name:'definition of some other food waste', childs:null
-                          
-                        }
-                      ]}   
+                {
+                  name:'element 2.1', childs:null
+                }
               ]
             },
             {
@@ -111,6 +94,7 @@ var CollapseTemplate = {
 			if (val.childs !== null) {
 				_this.draw(val.name, val.childs, $newPanel, val.url);
 			} else if (val.childs === null && val.url !== undefined && val.url !== null) {
+				$newPanel.find(".panel-title").append("<input type='checkbox'/>");
 				$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
 				$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
 					var jqxhr = Utils.doAjax({}, val.url);
