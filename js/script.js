@@ -5,7 +5,7 @@
             {
               name:'Women and Girls ', childs: [
                 {name:'element 1.1', description: "testing", childs: null},
-                {name:'element 1.2 jh', description: "testing", childs: null}
+                {name:'why', description: "testing", childs: null}
               ]
             },
             {
