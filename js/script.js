@@ -4,8 +4,8 @@
         residus: [
             {
               name:'Women and Girls ', childs: [
-                {name:'element 1.1', childs: null},
-                {name:'element 1.2 jh', childs: null}
+                {name:'element 1.1', description: "testing", childs: null},
+                {name:'element 1.2 jh', description: "testing", childs: null}
               ]
             },
             {
@@ -48,11 +48,11 @@ var CollapseTemplate = {
 		$("#" + this.params.parentId).empty();
 		var _this = this;
 		$.each(json.residus, function(i, val) {
-			_this.draw(val.name, val.childs, undefined, val.url);
+			_this.draw(val.name, val.childs, undefined, val.description);
 		});
 	},
 
-	draw : function(name, childs, panel, url) {
+	draw : function(name, childs, panel, description) {
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
@@ -63,7 +63,7 @@ var CollapseTemplate = {
 		
 		$($newPanel).attr("id", "panel" + numId);
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
-		this.drawChildNodes(childs,  $newPanel, numId, url);
+		this.drawChildNodes(childs,  $newPanel, numId, desription);
 		
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
@@ -78,42 +78,39 @@ var CollapseTemplate = {
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 	},
 	
-	drawChildNodes : function(childs,  $newPanel, numId, url) {
+	drawChildNodes : function(childs,  $newPanel, numId, description) {
 		if(childs!==undefined && childs!==null)	{
 			this.drawChildNodesArray(childs, $newPanel, numId);
-		}	else if ((childs===undefined || childs===null)&& url!==undefined)	{
-			this.drawChildNodesAjax(url, $newPanel, numId);
-		}
+		}	
 	},
 	
-
 	drawChildNodesArray : function(childs,  $newPanel, numId) {
 		var _this = this;
 
 		$.each(childs, function(i, val) {
 			if (val.childs !== null) {
-				_this.draw(val.name, val.childs, $newPanel, val.url);
-			} else if (val.childs === null && val.url !== undefined && val.url !== null) {
-				$newPanel.find(".panel-title").append("<input type='checkbox'/>");
-				$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
-				$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
-					var jqxhr = Utils.doAjax({}, val.url);
-					jqxhr.done(function(dades) {
-						var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
-						$(panel).empty();
-						$.each(dades.residus, function(i, val) {
-							if(val.url===undefined || val.url===null)	{
-								$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
-							}	else	{
-								_this.draw(val.name, null, $("#panel"+numId), val.url);
-							}
-						});
-						$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
-					});
-				});
+				_this.draw(val.name, val.childs, $newPanel, val.description);
+			// } else if (val.childs === null && val.url !== undefined && val.url !== null) {
+			// 	$newPanel.find(".panel-title").append("<input type='checkbox'/>");
+			// 	$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
+			// 	$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
+			// 		var jqxhr = Utils.doAjax({}, val.url);
+			// 		jqxhr.done(function(dades) {
+			// 			var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
+			// 			$(panel).empty();
+			// 			$.each(dades.residus, function(i, val) {
+			// 				if(val.url===undefined || val.url===null)	{
+			// 					$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
+			// 				}	else	{
+			// 					_this.draw(val.name, null, $("#panel"+numId), val.url);
+			// 				}
+			// 			});
+			// 			$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
+			// 		});
+			// 	});
 				
-			}else {
-				$newPanel.find(".panel-body").append( val.name );
+			} else {
+				$newPanel.find(".panel-body").append( val.name, val.description );
 			}
 		});
 
@@ -122,27 +119,27 @@ var CollapseTemplate = {
 	// "<ul class='list-group'><li class='list-group-item'>"
 	// "</li></ul>"
 	
-	drawChildNodesAjax : function(url, $newPanel, numId) {
-		var _this = this;
-		$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
+	// drawChildNodesAjax : function(url, $newPanel, numId) {
+	// 	var _this = this;
+	// 	$newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
 		
-		$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
+	// 	$("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
 			
-			var jqxhr = Utils.doAjax({}, url);
+	// 		var jqxhr = Utils.doAjax({}, url);
 			
-			jqxhr.done(function(dades) {
-				var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
-				$(panel).empty();
-				$.each(dades.residus, function(i, val) {
-					if(val.url===undefined || val.url===null)	{
-						$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
-					}	else	{
-						_this.draw(val.name, null, $("#panel"+numId), val.url);
-					}
-				});
-				$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
-			});
-		});
+	// 		jqxhr.done(function(dades) {
+	// 			var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
+	// 			$(panel).empty();
+	// 			$.each(dades.residus, function(i, val) {
+	// 				if(val.url===undefined || val.url===null)	{
+	// 					$(panel).append("<li class='list-group-item'>"+val.name+"</li>");
+	// 				}	else	{
+	// 					_this.draw(val.name, null, $("#panel"+numId), val.url);
+	// 				}
+	// 			});
+	// 			$("#" + _this.params.parentId).off('click', 'a#link-'+numId );
+	// 		});
+	// 	});
 
 	}
 
@@ -164,17 +161,17 @@ Utils = {
 			});
 		});
 		return dest;
-	},
-
-	doAjax : function(params, _url) {
-		return $.ajax({
-			url : _url,
-			dataType : 'json',
-			data : params,
-			cache : false,
-			error : function(jqXHR, textStatus, errorThrown) {
-				alert(textStatus);
-			}
-		});
 	}
+
+	// doAjax : function(params, _url) {
+	// 	return $.ajax({
+	// 		url : _url,
+	// 		dataType : 'json',
+	// 		data : params,
+	// 		cache : false,
+	// 		error : function(jqXHR, textStatus, errorThrown) {
+	// 			alert(textStatus);
+	// 		}
+	// 	});
+	// }
 };
