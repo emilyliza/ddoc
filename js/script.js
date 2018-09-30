@@ -20,14 +20,14 @@
               ]
             },
             {
-              name:'2 level 1.. ', childs: [
+              name:'Energy ', childs: [
                 {
                   name:'element 2.1', childs:null
                 }
               ]
             },
             {
-                name:'2 level 1.. ',  childs:null
+                name:'Transport ',  childs:null
               }
           ]
       };
