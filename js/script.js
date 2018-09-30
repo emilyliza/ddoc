@@ -4,26 +4,50 @@
         residus: [
             {
               name:'Women and Girls ', childs: [
-                {name:'element 1.1', childs: null},
-                {name:'element 1.2 jh', childs: null}
+                {{name:'women share holders', childs: [
+                      {
+                          name:'definition of food waste', childs:null
+                          
+                        }
+                      ]},
+                {name:'something else', childs: [
+                      {
+                          name:'definition of some other food waste', childs:null
+                          
+                        }
+                      ]}  
               ]
             },
             {
               name:'Food Waste', childs: [
-                {name:'element 1.1', childs: null},
                 {name:'reduced food waste', childs: [
                       {
                           name:'definition of food waste', childs:null
                           
                         }
-                      ]}
+                      ]},
+                {name:'reduced', childs: [
+                      {
+                          name:'definition of some other food waste', childs:null
+                          
+                        }
+                      ]}      
               ]
             },
             {
               name:'Energy ', childs: [
-                {
-                  name:'element 2.1', childs:null
-                }
+                {name:'electric bikes', childs: [
+                      {
+                          name:'definition of food waste', childs:null
+                          
+                        }
+                      ]},
+                {name:'buildings', childs: [
+                      {
+                          name:'definition of some other food waste', childs:null
+                          
+                        }
+                      ]}   
               ]
             },
             {
