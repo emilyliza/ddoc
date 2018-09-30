@@ -4,7 +4,7 @@
         residus: [
             {
               name:'Women and Girls ', childs: [
-                {{name:'women share holders', childs: [
+                {name:'women share holders', childs: [
                       {
                           name:'definition of food waste', childs:null
                           
