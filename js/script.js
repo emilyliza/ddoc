@@ -4,31 +4,28 @@
         residus: [
             {
               name:'Women and Girls ', childs: [
-                {name:'element 1.1', description: "testing", childs: null},
-                {name:'why', description: "testing", childs: null}
+                {name:'element 1.1', description: " testing", childs: null},
+                {name:'why', description: " testing", childs: null}
               ]
             },
             {
               name:'Food Waste', childs: [
-                {name:'element 1.1', childs: null},
-                {name:'reduced food waste', childs: [
-                      {
-                          name:'definition of food waste', childs:null
-                          
-                        }
-                      ]}
+                {name:'element 1.1', description: " testing", childs: null},
+                {name:'reduced food waste', description: " testing", childs:null}
               ]
             },
             {
               name:'Energy ', childs: [
-                {
-                  name:'element 2.1', childs:null
-                }
+                {name:'element 1.1', description: " testing", childs: null},
+                {name:'reduced food waste', description: " testing", childs:null}
               ]
             },
             {
-                name:'Transport ',  childs:null
-              }
+                name:'Transport ',  [
+                {name:'element 1.1', description: "testing", childs: null},
+                {name:'reduced food waste', description: "testing", childs:null}
+              ]
+            }
           ]
       };
 
@@ -64,6 +61,7 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 		this.drawChildNodes(childs,  $newPanel, numId, description);
+		drawChildNodesArray(childs,  $newPanel, numId, description);
 		
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
@@ -78,13 +76,14 @@ var CollapseTemplate = {
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 	},
 	
-	drawChildNodes : function(childs,  $newPanel, numId, description) {
-		if(childs!==undefined && childs!==null)	{
-			this.drawChildNodesArray(childs, $newPanel, numId);
-		}	
-	},
+	// drawChildNodes : function(childs,  $newPanel, numId, description) {
+	// 	if(childs!==undefined && childs!==null)	{
+	// 		this.draw(val.name, val.childs, $newPanel, val.description);
+	// 		// this.drawChildNodesArray(childs, $newPanel, numId);
+	// 	}	
+	// },
 	
-	drawChildNodesArray : function(childs,  $newPanel, numId) {
+	drawChildNodesArray : function(childs,  $newPanel, numId, description) {
 		var _this = this;
 
 		$.each(childs, function(i, val) {
