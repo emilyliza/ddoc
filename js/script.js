@@ -105,7 +105,6 @@ var CollapseTemplate = {
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			console.log($(panel).find(".panel-collapse").attr("id"));
 			$(panel).find(".panel-body").attr("id", "collapse" + numId).append($newPanel);
 		}
 	}
