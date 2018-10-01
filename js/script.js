@@ -99,7 +99,7 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);
 	
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
-		console.log(numId)
+		console.log("up down all around");
 		var id = $newPanel[0].id;
 
 		if (panel === undefined) {
