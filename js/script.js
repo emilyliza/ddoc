@@ -81,17 +81,16 @@ var CollapseTemplate = {
 	drawChildNodesArray : function(childs, $newPanel, dataParentId) {
 		var _this = this;
 		$.each(childs, function(i, val) {  
-				_this.drawChilds(val.name, $newPanel, val.description, dataParentId);
+				_this.drawChilds(val.name, $newPanel, val.description);
 		});
 
 	},
-	drawChilds : function(name, panel, description, dataParentId) {
+	drawChilds : function(name, panel, description) {
 		
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
-		var dataParentId = dataParentId;
-		var ids = [];
+		var dataParentId = this.params.parentId;
 		// if (panel !== undefined) {
 		// 	dataParentId = $(panel).find(".panel-collapse").attr("id");
 		// }
