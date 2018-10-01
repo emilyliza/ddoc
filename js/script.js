@@ -50,6 +50,8 @@ var CollapseTemplate = {
 
   //create panel
 	draw : function(name, childs, panel) {
+
+		console.log("here's the panel", panel);
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
