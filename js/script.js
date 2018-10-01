@@ -52,37 +52,26 @@ var CollapseTemplate = {
 	draw : function(name, childs, panel) {
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
-		console.log("newly created numId", numId);
 		var template = $(this.params.templateSelector);
-		//create new panel
 		var $newPanel = template.clone();
-		//get parent id (accordian)
 		var dataParentId = this.params.parentId;
-		console.log("default parent id", dataParentId);
+	
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
-			console.log("parent ID for panels that are already defined", dataParentId)
 		}
 		
-		$($newPanel).attr("id", "panel" + numId);
-
-		console.log("new panel", $newPanel);
-	
+		$($newPanel).attr("id", "panel" + numId);	
+		 this.drawHeader(name, $newPanel, numId, dataParentId);
 	
 		if (childs !== undefined){
-		 this.drawHeader(name, $newPanel, numId, dataParentId);
-		 console.log(childs, $newPanel, numId, dataParentId);	
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
-		
-		if (childs === undefined){
-			this.drawHeader(name, $newPanel, numId++, dataParentId++);
-		}
 
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			$(panel).find(".panel-body").attr("id", "panel" + numId).append($newPanel);
+			$("#" + this.params.parentId).append($newPanel.show());
+			// $(panel).find(".panel-body").attr("id", "panel" + numId).append($newPanel);
 		}
 	},
 	
