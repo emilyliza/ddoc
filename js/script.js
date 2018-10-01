@@ -3,25 +3,25 @@
  var json = {
         solutions: [
             {
-              name:'Women and Girls ', id: 4, childs: [
+              name:'Women and Girls ', childs: [
                 {name:'women shareholders', description: " testing"},
                 {name:'educating girls', description: " testing"}
               ]
             },
             {
-              name:'Food Waste', id: 5, childs: [
+              name:'Food Waste', childs: [
                 {name:'composting', description: " testing"},
                 {name:'pickles', description: " testing"}
               ]
             },
             {
-              name:'Energy ', id: 6, childs: [
+              name:'Energy ', childs: [
                 {name:'electricity', description: " testing"},
                 {name:'solar roofs', description: " testing"}
               ]
             },
             {
-                name:'Transport ',id: 7, childs: [
+                name:'Transport ', childs: [
                 {name:'cars', description: "testing"},
                 {name:'bikes', description: "testing"}
               ]
@@ -66,14 +66,14 @@ var CollapseTemplate = {
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 
 		if (childs !== undefined){
-		 console.log(childs, $newPanel, numId);	
+		 console.log(childs, $newPanel, numId, dataParentId);	
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 		
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			$(panel).find(".panel-body").append($newPanel);
+			$(panel).find(".panel-body").attr("id", "panel" + dataParentId).append($newPanel);
 		}
 	},
 	
@@ -131,7 +131,6 @@ Utils = {
 				dest[key] = source[key];
 			});
 		});
-		console.log("dest is here", dest);
 		return dest;
 	}
 
