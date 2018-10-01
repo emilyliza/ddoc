@@ -77,3 +77,23 @@ ul li a.toggle {
 ul li a.toggle:hover {
   background: rgba(0, 0, 0, 0.9);
 }
+.button {
+  display: inline-block;
+  height: 20px;
+  background-color: #2e6e9e;
+  font-family: arial;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  margin: 2px 2px 2px 2px;
+  cursor: pointer;
+}
+#addShelf {
+  float: right;
+  width: 80px;
+}
+#addSection {
+  float: right;
+  width: 80px;
+}
