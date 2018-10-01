@@ -54,7 +54,6 @@ var CollapseTemplate = {
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
 		var dataParentId = this.params.parentId;
-		console.log("parent id", dataParentId);
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
 		}
@@ -93,9 +92,9 @@ var CollapseTemplate = {
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
 		var ids = [];
-		if (panel !== undefined) {
-			dataParentId = $(panel).find(".panel-collapse").attr("id");
-		}
+		// if (panel !== undefined) {
+		// 	dataParentId = $(panel).find(".panel-collapse").attr("id");
+		// }
 		
 		$($newPanel).attr("id", "panel" + numId);
 	
@@ -105,7 +104,8 @@ var CollapseTemplate = {
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			$(panel).find(".panel-body").parent().append($newPanel);
+			console.log($(panel).find(".panel-collapse").attr("id"));
+			$(panel).find(".panel-body").append($newPanel);
 		}
 	}
 };
