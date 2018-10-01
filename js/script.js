@@ -80,8 +80,9 @@ var CollapseTemplate = {
 	
 	drawChildNodesArray : function(childs, $newPanel, numId) {
 		var _this = this;
-		$.each(childs, function(i, val) {  
-				_this.draw(val.name, $newPanel, val.description);
+		$.each(childs, function(i, val) { 
+		     console.log(val); 
+				_this.drawChilds(val.name, $newPanel, val.description);
 		});
 
 	},
