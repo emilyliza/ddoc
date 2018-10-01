@@ -72,7 +72,7 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			// $("#" + this.params.parentId).append($newPanel.show());
-			$(panel).find(".panel-body").attr("id", "panel" + numId).append($newPanel);
+			$(panel).find(".panel-body").append($newPanel);
 		}
 	},
 	
