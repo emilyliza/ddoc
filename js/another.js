@@ -25,7 +25,7 @@ $(document).ready(function () {
       }
   });
 
-  var child = $(".child-accordion2").accordion({
+  var child2 = $(".child-accordion2").accordion({
       active:false,
       collapsible: true, 
       autoHeight: false,
