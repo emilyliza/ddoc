@@ -91,6 +91,7 @@ var CollapseTemplate = {
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
 		if (panel !== undefined) {
+			console.log("a panel is not undefined!" + name);
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
 		}
 		
@@ -99,12 +100,12 @@ var CollapseTemplate = {
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 		
 		if (panel === undefined) {
+			console.log("oh my, panel is undefined!", name);
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	}
-
 };
 
 Global =	{
