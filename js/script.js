@@ -44,7 +44,7 @@ var CollapseTemplate = {
 		$("#" + this.params.parentId).empty();
 		var _this = this;
 		$.each(json.residus, function(i, val) {
-			_this.draw(val.name, val.childs, undefined, val.description, val.id);
+			_this.draw(val.name, val.childs, undefined, val.description);
 		});
 	},
 
