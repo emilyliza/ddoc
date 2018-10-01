@@ -49,17 +49,17 @@ var CollapseTemplate = {
 	},
 
   //create panel
-	draw : function(name, childs, panel, description, id) {
+	draw : function(name, childs, panel, description) {
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
-		var dataParentId = id;
-		// var dataParentId = this.params.parentId;
+		var dataParentId = this.params.parentId;
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
 		}
 		
 		$($newPanel).attr("id", "panel" + numId);
+	
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 		// this.drawChildNodes(childs,  $newPanel, numId, description);
 		this.drawChildNodesArray(childs,  $newPanel, numId, description, dataParentId);
@@ -83,13 +83,34 @@ var CollapseTemplate = {
 	// 		// this.drawChildNodesArray(childs, $newPanel, numId);
 	// 	}	
 	// },
+	// /create panel
+	drawChilds : function(name, panel, description) {
+		var numId = Global.getNextNumCollapseElement();
+		var template = $(this.params.templateSelector);
+		var $newPanel = template.clone();
+		var dataParentId = this.params.parentId;
+		if (panel !== undefined) {
+			dataParentId = $(panel).find(".panel-collapse").attr("id");
+		}
+		
+		$($newPanel).attr("id", "panel" + numId);
 	
-	drawChildNodesArray : function(childs,  $newPanel, numId, description, dataParentId) {
+		this.drawHeader(name,  $newPanel, numId, dataParentId);
+		// this.drawChildNodes(childs,  $newPanel, numId, description);
+		// this.drawChildNodesArray(childs,  $newPanel, numId, description, dataParentId);
+		
+		if (panel === undefined) {
+			$("#" + this.params.parentId).append($newPanel.show());
+		} else {
+			$(panel).find(".panel-body").append($newPanel);
+		}
+	},
+	
+	drawChildNodesArray : function(childs,  $newPanel, numId, description) {
 		var _this = this;
-		console.log(_this);
 		$.each(childs, function(i, val) {
 			// if (val.childs !== null) {
-				_this.draw(val.name, val.childs, $newPanel, val.description, dataParentId);
+				_this.draw(val.name, $newPanel, val.description );
 			// } else {
 			// 	$newPanel.find(".panel-body").append( val.name, val.description );
 			// }
