@@ -88,7 +88,6 @@ var CollapseTemplate = {
 	drawChilds : function(name, panel, description, dataParentId) {
 		console.log(name, panel, description);
 		var numId = Global.getNextNumCollapseElement();
-		console.log(numId);
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
@@ -103,7 +102,7 @@ var CollapseTemplate = {
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			console.log(panel, $newPanel);
+			console.log(panel, $newPanel.id);
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	}
