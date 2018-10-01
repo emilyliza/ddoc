@@ -50,6 +50,7 @@ var CollapseTemplate = {
 
   //create panel
 	draw : function(name, childs, panel) {
+		console.log(childs);
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
@@ -81,11 +82,11 @@ var CollapseTemplate = {
 	drawChildNodesArray : function(childs, $newPanel, numId) {
 		var _this = this;
 		$.each(childs, function(i, val) {  
-				_this.drawChilds(val.name, $newPanel, numId, val.description);
+				_this.drawChilds(val.name, $newPanel, val.description);
 		});
 
 	},
-	drawChilds : function(name, panel, numId, description) {
+	drawChilds : function(name, panel, description) {
 		
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
@@ -99,6 +100,7 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);
 	
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
+		console.log(numId)
 		var id = $newPanel[0].id;
 
 		if (panel === undefined) {

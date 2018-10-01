@@ -1,122 +1,162 @@
-$(document).ready(function () {
-  $(".accordion").accordion({
-      collapsible: true, 
-      autoHeight: false, 
-      animated: 'swing',
-      heightStyle: "content",
-      changestart: function(event, ui) {
-          child.accordion("activate", false);
-      }
-  });
+// Code goes here
 
-  var child = $(".child-accordion").accordion({
-      active:false,
-      collapsible: true, 
-      autoHeight: false,
-      animated: 'swing'
-  });
-  $(".accordion2").accordion({
-      collapsible: true, 
-      autoHeight: false, 
-      animated: 'swing',
-      heightStyle: "content",
-      changestart: function(event, ui) {
-          child.accordion("activate", false);
-      }
-  });
+var CollapseTemplate = {
+  params : {
+    templateSelector : '.template',
+    parentId : 'accordion'
+  },
 
-  var child2 = $(".child-accordion2").accordion({
-      active:false,
-      collapsible: true, 
-      autoHeight: false,
-      animated: 'swing'
-  });
-});
-
-var activeShelf = 0;
-/* Code to add new shelves and sections */
-var shelves = [];
-var shelfIndex = 0;
-var sectionIndex = 0;
-
-$(document).ready(function() {
-  /* Add a shelf to the accordion */
-  $('#addShelf').click(function () {
-    addShelf(shelves);
-    createShelf(shelves, shelfIndex);
-    addShelfContent(shelves, shelfIndex);
-    createSection(shelves, shelfIndex, sectionIndex);
-    addSectionContent(shelves, shelfIndex, sectionIndex);
-    $('.accordion').accordion("refresh");
-    //$('.child-accordion').accordion("refresh");
-    shelfIndex++;
-  });
-
-  $('#addSection').click(function () {
-    activeShelf = $('.accordion').accordion( "option", "active");
-    activeShelf = activeShelf - 1; // Because the example section is still there, subtract 1 to get array index
-    shelves[activeShelf].sections.push(new sections());
-    createSection(shelves, activeShelf, shelves[activeShelf].sections.length - 1)
-    addSectionContent(shelves, activeShelf, shelves[activeShelf].sections.length - 1)
-    //$('child-accordion').accordion("refresh");
-  });
-});
-
-function addShelf(shelvesArray) {
-  shelvesArray.push(new shelf);
-  shelvesArray[shelfIndex].sections[0].nSections++;
-  return;
-}
-
-function createShelf(shelvesArray, shelfIndex) {
-  $('.accordion')
-    .append("<h3 id=\"shelf" + shelfIndex + "\">" + shelves[shelfIndex].shelfName + "<\/h3>")
-    .append("<div id=\"shelf" + shelfIndex + "sections\" class=\"child-accordion\"><\/div>")
-  return;
-}
-
-function addShelfContent(shelvesArray, shelfIndex) {
-  $('#shelf' + shelfIndex + 'sections')
-    .append("<h3>Attributes</h3>")
-    .append("<div id=\"shelf" + shelfIndex + "attr\"></div>")
-    .append("<img class=\"editPencil\" src=\"img/icons/pen.png\" onclick=editShelf()><\/img>");
+  init : function(_params) {
+    //sobreescibimos los params
+    this.params = Utils.extend({}, this.params, _params);
+  },
   
-  $('#shelf' + shelfIndex + 'attr')
-    .append("<ul><li>Notes: " + shelves[shelfIndex].notes + "<\/li>" +
-            "<li>Raspberry Pi UUID: " + shelves[shelfIndex].rpUUID + "<\/li><\/ul>");
-    return;
-}
+  //cargamos el JSON inicial
+  load : function(json) {
+    // borramos el panel principal
+    $("#" + this.params.parentId).empty();
+    var _this = this;
+    $.each(json.residus, function(i, val) {
+      _this.draw(val.name, val.childs, undefined, val.url);
+    });
+  },
 
-function createSection(shelvesArray, shelfIndex, sectionIndex) {
-  $('#shelf' + shelfIndex + 'sections')
-    .append("<h3>" + shelves[shelfIndex].sections[sectionIndex].sectionName + "<\/h3>")
-    .append("<div id=\"shelf" + shelfIndex + "section" + sectionIndex + "\">Section div<\/div>");
-  return;
-}
+  draw : function(name, childs, panel, url) {
+    console.log(childs);
+    //pillamos un numero que se aumenta para los ids
+    var numId = Global.getNextNumCollapseElement();
+    //pillamos el template
+    var template = $(this.params.templateSelector);
+    //lo cloneamos
+    var $newPanel = template.clone();
+    var dataParentId = this.params.parentId;
+    //si el panel no esta definido el padre es el container definido en los params
+    if (panel !== undefined) {
+      dataParentId = $(panel).find(".panel-collapse").attr("id");
+    }
+    
+    //añadimos una id al panel
+    $($newPanel).attr("id", "panel" + numId);
+    //pintamos elemento header
+    this.drawHeader(name,  $newPanel, numId, dataParentId);
+    //manejamos los hijos
+    this.drawChildNodes(childs,  $newPanel, numId, url);
+    
+    //si es el primer nivel añadimos al padre sino al panel creado
+    if (panel === undefined) {
+      $("#" + this.params.parentId).append($newPanel.show());
+    } else {
+      $(panel).find(".panel-body").append($newPanel);
+    }
+  },
+  
+  drawHeader : function(name,  $newPanel, numId, dataParentId) {
+    $newPanel.find(".collapse").removeClass("in");
+    $newPanel.find(".accordion-toggle") .attr("href", "#collapse" + numId).text(name).attr( "data-parent", dataParentId).attr("id", "link-"+numId);
+    $newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
+  },
+  
+  drawChildNodes : function(childs,  $newPanel, numId, url) {
+    if(childs!==undefined && childs!==null) {
+      this.drawChildNodesArray(childs, $newPanel, numId);
+    } else if ((childs===undefined || childs===null)&& url!==undefined) {
+      this.drawChildNodesAjax(url, $newPanel, numId);
+    }
+  },
+  
+  //pinta los hijos apartir de un array
+  drawChildNodesArray : function(childs,  $newPanel, numId) {
+    var _this = this;
+    // cargamos los hijos del array
+    $.each(childs, function(i, val) {
+      if (val.childs !== null) {
+        _this.draw(val.name, val.childs, $newPanel, val.url);
+      //si se cargan los hijos por ajax
+      } else if (val.childs === null && val.url !== undefined && val.url !== null) {
+        $newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
+        $("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
+          var jqxhr = Utils.doAjax({}, val.url);
+          jqxhr.done(function(dades) {
+            var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
+            $(panel).empty();
+            $.each(dades.residus, function(i, val) {
+              if(val.url===undefined || val.url===null) {
+                $(panel).append("<li class='list-group-item'>"+val.name+"</li>");
+              } else  {
+                _this.draw(val.name, null, $("#panel"+numId), val.url);
+              }
+            });
+            //una vez cargado en la DOM quitamos el evento para no hacer más llamadas ajax
+            $("#" + _this.params.parentId).off('click', 'a#link-'+numId );
+          });
+        });
+        
+      }else {
+        $newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + "</li></ul>");
+      }
+    });
 
-function addSectionContent(shelvesArray, shelfIndex, sectionIndex) {
-  $('#shelf' + shelfIndex + 'section' + sectionIndex)
-    .append("<ul><li>Display name: " + shelves[shelfIndex].sections[sectionIndex].displayId + "<\/li>" + 
-            "<li>Display Color: " + shelves[shelfIndex].sections[sectionIndex].displayColor + "<\/li>" + 
-            "<li>PIR URL: " + shelves[shelfIndex].sections[sectionIndex].pirURL + "<\/li>" + 
-            "<li>Photo interrupter URL: " + shelves[shelfIndex].sections[sectionIndex].pintURL + "<\/li><\/ul>")
-    return;
-}
+  },
+  
+  //pinta los hijos apartir de una URL
+  //TODO codigo duplicado (drawChildNodesArray)
+  drawChildNodesAjax : function(url, $newPanel, numId) {
+    var _this = this;
+    $newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
+    //añadimos un cklick-event para que se carquen por ajax cuando se haga click en el link
+    $("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
+      //una vez se ha hecho click se llama a la URL por AJAX
+      var jqxhr = Utils.doAjax({}, url);
+      //manejamos la promesa
+      jqxhr.done(function(dades) {
+        var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
+        $(panel).empty();
+        $.each(dades.residus, function(i, val) {
+          if(val.url===undefined || val.url===null) {
+            $(panel).append("<li class='list-group-item'>"+val.name+"</li>");
+          } else  {
+            _this.draw(val.name, null, $("#panel"+numId), val.url);
+          }
+        });
+        //una vez cargado en la DOM quitamos el evento para no hacer más llamadas ajax
+        $("#" + _this.params.parentId).off('click', 'a#link-'+numId );
+      });
+    });
 
-function shelf() {
-  this.shelfName = "Default shelf name";
-  this.notes = "Some notes about the shelf";
-  this.rpUUID = "#######";
-  this.sections = [];
-  this.sections.push( new sections());
-  return;
-}
+  }
 
-function sections() {
-  this.sectionName = "Default Section name";
-  this.displayId;
-  this.displayColor;
-  this.pirURL;
-  this.pintURL;
-  return;
-}
+};
+
+Global =  {
+  countCollapseElements: 0,
+  getNextNumCollapseElement : function() {
+    return this.countCollapseElements++;
+  }
+};
+
+Utils = {
+  // extender un object con otro, sobrescribe los properties que se llaman
+  // igual
+  extend : function(dest) {
+    var sources = Array.prototype.slice.call(arguments, 1);
+    sources.forEach(function(source) {
+      Object.keys(source).forEach(function(key) {
+        dest[key] = source[key];
+      });
+    });
+    return dest;
+  },
+
+  // hacer la llamada ajax con JSON
+  doAjax : function(params, _url) {
+    return $.ajax({
+      url : _url,
+      dataType : 'json',
+      data : params,
+      cache : false,
+      error : function(jqXHR, textStatus, errorThrown) {
+        alert(textStatus);
+      }
+    });
+  }
+};
