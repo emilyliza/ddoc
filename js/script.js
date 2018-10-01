@@ -101,9 +101,9 @@ var CollapseTemplate = {
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 		
 		if (panel === undefined) {
-			console.log("oh my, panel is undefined!", name);
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
+			console.log(panel, $newPanel);
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	}
