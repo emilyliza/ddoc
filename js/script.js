@@ -90,9 +90,9 @@ var CollapseTemplate = {
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
-		if (panel !== undefined) {
-			dataParentId = $(panel).find(".panel-collapse").attr("id");
-		}
+		// if (panel !== undefined) {
+		// 	dataParentId = $(panel).find(".panel-collapse").attr("id");
+		// }
 		
 		$($newPanel).attr("id", "panel" + numId);
 	
