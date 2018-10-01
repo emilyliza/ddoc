@@ -86,11 +86,12 @@ var CollapseTemplate = {
 
 	},
 	drawChilds : function(name, panel, description, dataParentId) {
-		console.log(name, panel, description);
+		
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
+		var ids = [];
 		// if (panel !== undefined) {
 		// 	dataParentId = $(panel).find(".panel-collapse").attr("id");
 		// }
@@ -98,12 +99,13 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);
 	
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
-		
+		var id = $newPanel[0].id;
+
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			console.log(panel, $newPanel[0].id);
-			$(panel).find(".panel-body").append($newPanel);
+			console.log($newPanel[0].id);
+			$(panel).find(".panel-body").parent().append($newPanel);
 		}
 	}
 };
