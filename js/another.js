@@ -72,25 +72,6 @@ var CollapseTemplate = {
       if (val.childs !== null) {
         _this.draw(val.name, val.childs, $newPanel, val.url);
       //si se cargan los hijos por ajax
-      } else if (val.childs === null && val.url !== undefined && val.url !== null) {
-        $newPanel.find(".panel-body").append("<ul class='list-group' id='list-group-"+numId+"'><li class='list-group-item'>loading</li></ul>");
-        $("#" + _this.params.parentId).on('click', 'a#link-'+numId ,function() {
-          var jqxhr = Utils.doAjax({}, val.url);
-          jqxhr.done(function(dades) {
-            var panel = $("#" + _this.params.parentId).find("#collapse"+numId+" > div.panel-body");
-            $(panel).empty();
-            $.each(dades.residus, function(i, val) {
-              if(val.url===undefined || val.url===null) {
-                $(panel).append("<li class='list-group-item'>"+val.name+"</li>");
-              } else  {
-                _this.draw(val.name, null, $("#panel"+numId), val.url);
-              }
-            });
-            //una vez cargado en la DOM quitamos el evento para no hacer más llamadas ajax
-            $("#" + _this.params.parentId).off('click', 'a#link-'+numId );
-          });
-        });
-        
       }else {
         $newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + "</li></ul>");
       }
@@ -144,6 +125,7 @@ Utils = {
         dest[key] = source[key];
       });
     });
+    console.log(dest);
     return dest;
   },
 

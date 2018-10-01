@@ -58,7 +58,6 @@ var CollapseTemplate = {
 		//get parent id (accordian)
 		var dataParentId = this.params.parentId;
 		if (panel !== undefined) {
-			console.log("when we get here the panel undefined?");
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
 		}
 		
@@ -67,6 +66,7 @@ var CollapseTemplate = {
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 
 		if (childs !== undefined){
+		 console.log(childs, $newPanel, numId);	
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 		
@@ -91,29 +91,29 @@ var CollapseTemplate = {
 			 _this.draw(val.name, undefined, $newPanel);
 		});
 
-	},
-	drawChilds : function(name, panel, description) {
-		
-		var numId = Global.getNextNumCollapseElement();
-		var template = $(this.params.templateSelector);
-		var $newPanel = template.clone();
-		var dataParentId = this.params.parentId;
-		if (panel !== undefined) {
-			dataParentId = $(panel).find(".panel-collapse").attr("id");
-		}
-		
-		$($newPanel).attr("id", "panel" + numId);
-	
-		this.drawHeader(name,  $newPanel, numId, dataParentId);
-		
-		var id = $newPanel[0].id;
-
-		if (panel === undefined) {
-			$("#" + this.params.parentId).append($newPanel.show());
-		} else {
-			$(panel).find(".panel-body").attr("id", "collapse" + numId).append($newPanel);
-		}
 	}
+	// drawChilds : function(name, panel, description) {
+		
+	// 	var numId = Global.getNextNumCollapseElement();
+	// 	var template = $(this.params.templateSelector);
+	// 	var $newPanel = template.clone();
+	// 	var dataParentId = this.params.parentId;
+	// 	if (panel !== undefined) {
+	// 		dataParentId = $(panel).find(".panel-collapse").attr("id");
+	// 	}
+		
+	// 	$($newPanel).attr("id", "panel" + numId);
+	
+	// 	this.drawHeader(name,  $newPanel, numId, dataParentId);
+		
+	// 	var id = $newPanel[0].id;
+
+	// 	if (panel === undefined) {
+	// 		$("#" + this.params.parentId).append($newPanel.show());
+	// 	} else {
+	// 		$(panel).find(".panel-body").attr("id", "collapse" + numId).append($newPanel);
+	// 	}
+	// }
 };
 
 Global =	{
@@ -131,6 +131,7 @@ Utils = {
 				dest[key] = source[key];
 			});
 		});
+		console.log("dest is here", dest);
 		return dest;
 	}
 
