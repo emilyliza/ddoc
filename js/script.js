@@ -71,15 +71,15 @@ var CollapseTemplate = {
 			console.log("params", this.params);
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			$("#" + this.params.parentId).append($newPanel.show());
-			// $(panel).find(".panel-body").attr("id", "panel" + numId).append($newPanel);
+			// $("#" + this.params.parentId).append($newPanel.show());
+			$(panel).find(".panel-body").attr("id", "panel" + numId).append($newPanel);
 		}
 	},
 	
 	drawHeader : function(name,  $newPanel, numId, dataParentId) {
 		$newPanel.find(".collapse").removeClass("in");
 		$newPanel.find(".accordion-toggle")	.attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
-		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
+		$newPanel.find(".panel-collapse").attr("id", dataParentId).addClass("collapse").removeClass("in");
 	},
 	
 	
