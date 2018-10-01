@@ -4,26 +4,26 @@
         solutions: [
             {
               name:'Women and Girls ', id: 4, childs: [
-                {name:'element 1.1', description: " testing", childs: null},
-                {name:'why', description: " testing", childs: null}
+                {name:'women shareholders', description: " testing"},
+                {name:'educating girls', description: " testing"}
               ]
             },
             {
               name:'Food Waste', id: 5, childs: [
-                {name:'element 1.1', description: " testing", childs: null},
-                {name:'reduced food waste', description: " testing", childs:null}
+                {name:'composting', description: " testing"},
+                {name:'pickles', description: " testing"}
               ]
             },
             {
               name:'Energy ', id: 6, childs: [
-                {name:'element 1.1', description: " testing", childs: null},
-                {name:'reduced food waste', description: " testing", childs:null}
+                {name:'electricity', description: " testing"},
+                {name:'solar roofs', description: " testing"}
               ]
             },
             {
                 name:'Transport ',id: 7, childs: [
-                {name:'element 1.1', description: "testing", childs: null},
-                {name:'reduced food waste', description: "testing", childs:null}
+                {name:'cars', description: "testing"},
+                {name:'bikes', description: "testing"}
               ]
             }
           ]
@@ -78,6 +78,13 @@ var CollapseTemplate = {
 	},
 	
 	
+	drawChildNodesArray : function(childs, $newPanel, dataParentId) {
+		var _this = this;
+		$.each(childs, function(i, val) {
+				_this.drawChilds(val.name, $newPanel, val.description, dataParentId);
+		});
+
+	},
 	drawChilds : function(name, panel, description, dataParentId) {
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
@@ -96,15 +103,8 @@ var CollapseTemplate = {
 		} else {
 			$(panel).find(".panel-body").append($newPanel);
 		}
-	},
-
-	drawChildNodesArray : function(childs, $newPanel, dataParentId) {
-		var _this = this;
-		$.each(childs, function(i, val) {
-				_this.drawChilds(val.name, $newPanel, val.description, dataParentId);
-		});
-
 	}
+
 };
 
 Global =	{
