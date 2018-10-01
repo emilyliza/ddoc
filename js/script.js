@@ -105,12 +105,12 @@ var CollapseTemplate = {
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	},
-	
+
 	drawChildNodesArray : function(childs,  $newPanel, numId, description) {
 		var _this = this;
 		$.each(childs, function(i, val) {
 			// if (val.childs !== null) {
-				_this.draw(val.name, $newPanel, val.description );
+				_this.drawChilds(val.name, $newPanel, val.description );
 			// } else {
 			// 	$newPanel.find(".panel-body").append( val.name, val.description );
 			// }
