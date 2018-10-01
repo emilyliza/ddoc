@@ -99,12 +99,12 @@ var CollapseTemplate = {
 	
 		this.drawHeader(name,  $newPanel, numId, dataParentId);
 		
-		if (panel === undefined) {
-			console.log("oh my, panel is undefined!", name);
-			$("#" + this.params.parentId).append($newPanel.show());
-		} else {
-			$(panel).find(".panel-body").append($newPanel);
-		}
+		// if (panel === undefined) {
+		// 	console.log("oh my, panel is undefined!", name);
+		// 	$("#" + this.params.parentId).append($newPanel.show());
+		// } else {
+		// 	$(panel).find(".panel-body").append($newPanel);
+		// }
 	}
 };
 
