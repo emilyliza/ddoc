@@ -15,6 +15,22 @@ $(document).ready(function () {
       autoHeight: false,
       animated: 'swing'
   });
+  $(".accordion2").accordion({
+      collapsible: true, 
+      autoHeight: false, 
+      animated: 'swing',
+      heightStyle: "content",
+      changestart: function(event, ui) {
+          child.accordion("activate", false);
+      }
+  });
+
+  var child = $(".child-accordion2").accordion({
+      active:false,
+      collapsible: true, 
+      autoHeight: false,
+      animated: 'swing'
+  });
 });
 
 var activeShelf = 0;
