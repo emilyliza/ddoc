@@ -81,13 +81,14 @@ var CollapseTemplate = {
 	drawChildNodesArray : function(childs, $newPanel, dataParentId) {
 		var _this = this;
 		$.each(childs, function(i, val) {  
-         console.log(val, dataParentId);
 				_this.drawChilds(val.name, $newPanel, val.description, dataParentId);
 		});
 
 	},
 	drawChilds : function(name, panel, description, dataParentId) {
+		console.log(name, panel, description);
 		var numId = Global.getNextNumCollapseElement();
+		console.log(numId);
 		var template = $(this.params.templateSelector);
 		var $newPanel = template.clone();
 		var dataParentId = dataParentId;
