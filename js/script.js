@@ -102,7 +102,7 @@ var CollapseTemplate = {
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			console.log(panel, $newPanel.id);
+			console.log(panel, $newPanel[0].id);
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	}
