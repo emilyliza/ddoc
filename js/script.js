@@ -4,26 +4,26 @@
         solutions: [
             {
               name:'Women and Girls ', childs: [
-                {name:'women shareholders', description: " testing"},
-                {name:'educating girls', description: " testing"}
+                {name:'women shareholders', description: " testing", childs:null},
+                {name:'educating girls', description: " testing", childs:null}
               ]
             },
             {
               name:'Food Waste', childs: [
-                {name:'composting', description: " testing"},
-                {name:'pickles', description: " testing"}
+                {name:'composting', description: " testing",childs:null},
+                {name:'pickles', description: " testing",childs:null}
               ]
             },
             {
               name:'Energy ', childs: [
-                {name:'electricity', description: " testing"},
-                {name:'solar roofs', description: " testing"}
+                {name:'electricity', description: " testing", childs:null},
+                {name:'solar roofs', description: " testing", childs:null}
               ]
             },
             {
                 name:'Transport ', childs: [
-                {name:'cars', description: "testing"},
-                {name:'bikes', description: "testing"}
+                {name:'cars', description: "testing", childs:null},
+                {name:'bikes', description: "testing", childs:null}
               ]
             }
           ]
@@ -60,13 +60,14 @@ var CollapseTemplate = {
 	
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
+			console.log("data parent id for defined panels", dataParentId);
 		}
 		
 		$($newPanel).attr("id", "panel" + numId);	
-		 this.drawHeader(name, $newPanel, numId, dataParentId);
+		this.drawHeader(name, $newPanel, numId, dataParentId);
 	
 		if (childs !== undefined){
-			console.log("childes", childs);
+			console.log("childs", childs);
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 
