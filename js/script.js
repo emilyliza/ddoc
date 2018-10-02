@@ -90,6 +90,8 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
+			$($newPanel).find(".panel-body").append("<p>hello there</p>");
+			console.log(childs);
 		}
 	},
 	
