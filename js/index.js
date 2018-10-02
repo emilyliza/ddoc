@@ -1,26 +1,4 @@
 
-var solutions = [
-{ sector: "Land Use",
-   solution: "solution1",
-  description: "solution description hggfghf"
-},
-{ sector: "Land Use",
-  solution: "solution2",
-  description: "solution description oiujkjnjknj"
-},
-{ sector: "Women and Girls",
-  solution: "solution1",
-  description: "solution description yuyuyuyy"
-},
-{ sector: "Women and Girls",
-  solution: "solution2",
-  description: "solution description dgdfgcfgf"
-},
-{ sector: "Food",
-  solution: "solution1",
-  description: "solution description gjgyhjbjh"
-}
-];
 
 $('.panel-collapse').on('shown.bs.collapse', function(e) {
     e.preventDefault();  
@@ -34,3 +12,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 $(".panel-group").sortable({
     handle: ".panel-heading"
 });
+$(".panel-body").sortable({
+    handle: ".panel-heading"
+});
+
