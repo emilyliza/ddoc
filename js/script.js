@@ -67,7 +67,7 @@ var CollapseTemplate = {
 		this.drawHeader(name, $newPanel, numId, dataParentId);
 	
 		if (childs !== undefined){
-			console.log("childs", childs);
+		 console.log("childs", childs);
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 
@@ -89,7 +89,7 @@ var CollapseTemplate = {
 		var _this = this;
 		$.each(childs, function(i, val) { 
 			// $newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + val.description + "</li></ul>");
-			 _this.draw(val.name, undefined, $newPanel);
+			 _this.draw(val.name, val.childs, $newPanel);
 		});
 
 	}
