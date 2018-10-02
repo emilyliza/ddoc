@@ -3,7 +3,7 @@
  var json = {
         solutions: [
             {
-              name:'Women and Girls ', childs: [
+              name:'Women and Girls', childs: [
                 {name:'women shareholders', description: " testing", childs:null},
                 {name:'educating girls', description: " testing", childs:null}
               ]
@@ -15,15 +15,33 @@
               ]
             },
             {
-              name:'Energy ', childs: [
-                {name:'electricity', description: " testing", childs:null},
+              name:'Energy', childs: [
+              	{name:'electricity', description: " testing", childs:null},
                 {name:'solar roofs', description: " testing", childs:null}
               ]
             },
             {
-                name:'Transport ', childs: [
+              name:'Transport', childs: [
                 {name:'cars', description: "testing", childs:null},
                 {name:'bikes', description: "testing", childs:null}
+              ]
+            },
+            {
+              name:'Buildings and Cities', childs: [
+                {name:'green roofs', description: "testing", childs:null},
+                {name:'walkable cities', description: "testing", childs:null}
+              ]
+            },
+            {
+              name:'Materials', childs: [
+                {name:'smart glass', description: "testing", childs:null},
+                {name:'bike infrastructure', description: "testing", childs:null}
+              ]
+            },
+            {
+              name:'Energy', childs: [
+                {name:'solar farms', description: "testing", childs:null},
+                {name:'microgrids', description: "testing", childs:null}
               ]
             }
           ]
