@@ -91,7 +91,7 @@ var CollapseTemplate = {
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
 			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
-			console.log(childs);
+			console.log(description);
 		}
 	},
 	
