@@ -10,8 +10,8 @@
             },
             {
               name:'Food Waste', childs: [
-                {name:'composting', description: " testing",childs:null},
-                {name:'pickles', description: " testing",childs:null}
+                {name:'composting', description: " testing", childs:null},
+                {name:'pickles', description: " testing", childs:null}
               ]
             },
             {
@@ -51,7 +51,6 @@ var CollapseTemplate = {
   //create panel
 	draw : function(name, childs, panel) {
 
-		console.log("here's the panel", name);
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
@@ -60,7 +59,6 @@ var CollapseTemplate = {
 	
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
-			console.log("data parent id for defined panels", dataParentId);
 		}
 		
 		$($newPanel).attr("id", "panel" + numId);	
@@ -81,7 +79,7 @@ var CollapseTemplate = {
 	drawHeader : function(name,  $newPanel, numId, dataParentId) {
 		$newPanel.find(".collapse").removeClass("in");
 		$newPanel.find(".accordion-toggle")	.attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
-		$newPanel.find(".panel-collapse").attr("id", dataParentId).addClass("collapse").removeClass("in");
+		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 	},
 	
 	
