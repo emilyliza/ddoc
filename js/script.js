@@ -59,21 +59,19 @@ var CollapseTemplate = {
 	
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
-			$(panel).find(".panel-body").addClass('sector');
 		}
 		
 		$($newPanel).attr("id", "panel" + numId);	
 		this.drawHeader(name, $newPanel, numId, dataParentId);
 	
 		if (childs !== null){
-		 console.log("childs", childs);
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			$(panel).find(".panel-body").append($newPanel);
+			$(panel).find(".panel-body:first").append($newPanel);
 		}
 	},
 	
