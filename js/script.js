@@ -59,6 +59,7 @@ var CollapseTemplate = {
 	
 		if (panel !== undefined) {
 			dataParentId = $(panel).find(".panel-collapse").attr("id");
+			$(panel).find(".panel-body").addClass('sector');
 		}
 		
 		$($newPanel).attr("id", "panel" + numId);	
@@ -78,7 +79,7 @@ var CollapseTemplate = {
 	
 	drawHeader : function(name,  $newPanel, numId, dataParentId) {
 		$newPanel.find(".collapse").removeClass("in");
-		$newPanel.find(".accordion-toggle")	.attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
+		$newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 		$newPanel.find(".panel-heading").attr("id", "headingOne" + numId);
 	},
