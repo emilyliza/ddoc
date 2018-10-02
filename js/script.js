@@ -66,7 +66,7 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);	
 		this.drawHeader(name, $newPanel, numId, dataParentId);
 	
-		if (childs !== undefined){
+		if (childs !== null){
 		 console.log("childs", childs);
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
