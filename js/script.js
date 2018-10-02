@@ -51,7 +51,7 @@ var CollapseTemplate = {
   //create panel
 	draw : function(name, childs, panel) {
 
-		console.log("here's the panel", panel);
+		console.log("here's the panel", name);
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
@@ -66,13 +66,13 @@ var CollapseTemplate = {
 		 this.drawHeader(name, $newPanel, numId, dataParentId);
 	
 		if (childs !== undefined){
+			console.log("childes", childs);
 		 this.drawChildNodesArray(childs, $newPanel, numId);
 	  }
 
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
-			// $("#" + this.params.parentId).append($newPanel.show());
 			$(panel).find(".panel-body").append($newPanel);
 		}
 	},
