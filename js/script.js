@@ -67,7 +67,7 @@ var CollapseTemplate = {
 	},
 
   //create panel
-	draw : function(name, childs, panel) {
+	draw : function(name, childs, panel, description) {
 
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
@@ -90,7 +90,7 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
-			$($newPanel).find(".panel-body").append("<p>hello there</p>");
+			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
 			console.log(childs);
 		}
 	},
@@ -107,7 +107,7 @@ var CollapseTemplate = {
 		var _this = this;
 		$.each(childs, function(i, val) { 
 			// $newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + val.description + "</li></ul>");
-			 _this.draw(val.name, val.childs, $newPanel);
+			 _this.draw(val.name, val.childs, $newPanel, val.description);
 		});
 
 	}
