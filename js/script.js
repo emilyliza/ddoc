@@ -70,7 +70,6 @@ var CollapseTemplate = {
 	  }
 
 		if (panel === undefined) {
-			console.log("params", this.params);
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			// $("#" + this.params.parentId).append($newPanel.show());
@@ -88,34 +87,11 @@ var CollapseTemplate = {
 	drawChildNodesArray : function(childs, $newPanel, numId) {
 		var _this = this;
 		$.each(childs, function(i, val) { 
-			console.log("new panel in child function", $newPanel)
 			// $newPanel.find(".panel-body").append("<ul class='list-group'><li class='list-group-item'>" + val.name + val.description + "</li></ul>");
 			 _this.draw(val.name, undefined, $newPanel);
 		});
 
 	}
-	// drawChilds : function(name, panel, description) {
-		
-	// 	var numId = Global.getNextNumCollapseElement();
-	// 	var template = $(this.params.templateSelector);
-	// 	var $newPanel = template.clone();
-	// 	var dataParentId = this.params.parentId;
-	// 	if (panel !== undefined) {
-	// 		dataParentId = $(panel).find(".panel-collapse").attr("id");
-	// 	}
-		
-	// 	$($newPanel).attr("id", "panel" + numId);
-	
-	// 	this.drawHeader(name,  $newPanel, numId, dataParentId);
-		
-	// 	var id = $newPanel[0].id;
-
-	// 	if (panel === undefined) {
-	// 		$("#" + this.params.parentId).append($newPanel.show());
-	// 	} else {
-	// 		$(panel).find(".panel-body").attr("id", "collapse" + numId).append($newPanel);
-	// 	}
-	// }
 };
 
 Global =	{
