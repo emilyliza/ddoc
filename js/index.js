@@ -13,5 +13,5 @@ $(".panel-group").sortable({
     handle: ".panel-heading"
 });
 $(".panel-collapse").sortable({
-    handle: ".panel-body"
+    handle: ".panel-heading"
 });
