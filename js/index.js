@@ -12,7 +12,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 $(".panel-group").sortable({
     handle: ".panel-heading"
 });
-$(".panel-body").sortable({
+$(".panel-collapse").sortable({
     handle: ".panel-heading"
 });
 
