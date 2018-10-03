@@ -6,7 +6,7 @@
                 {name:'women shareholders', description: " testing1yyyy", childs:null},
                 {name:'educating girls', description: " testing2", childs:null},
                 {name:'educating girls2', description: " testing3", childs:null},
-                {name:'educating girls3', description: " testing4", childs:null}
+                {name:'educating girls34', description: " testing4", childs:null}
               ]
             },
             {
