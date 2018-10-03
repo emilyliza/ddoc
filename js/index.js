@@ -10,5 +10,6 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
       }, 500);
 });
 $(".panel-group").sortable({
-    handle: ".panel-heading"
+    handle: ".panel-heading",
+    nested: true
 });
