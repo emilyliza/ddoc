@@ -12,6 +12,6 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 $(".panel-group").sortable({
     handle: ".panel-heading"
 });
-$('#accordion').sortable({
-        items: '.panel-group'
-    });
+$(".template").sortable({
+    handle: ".panel-heading"
+});
