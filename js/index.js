@@ -12,6 +12,3 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 $(".panel-group, .roar").sortable({
     handle: ".panel-heading"
 });
-$('.template').sortable({
-    connectWith: $('.template')
-});
