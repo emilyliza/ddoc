@@ -12,3 +12,6 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 $(".panel-group").sortable({
     handle: ".panel-heading"
 });
+$(".panel-default").sortable({
+    handle: ".panel-heading"
+});
