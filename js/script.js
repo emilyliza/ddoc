@@ -81,10 +81,8 @@ var CollapseTemplate = {
 		$($newPanel).attr("id", "panel" + numId);	
 		this.drawHeader(name, $newPanel, numId, dataParentId);
 	
-		if (childs !== null){
-		 $($newPanel).append('<div class="panel-group" role="tablist">');	
-		 this.drawChildNodesArray(childs, $newPanel, numId);
-		 $($newPanel).append('</div');	
+		if (childs !== null){	
+		 this.drawChildNodesArray(childs, $newPanel, numId);	
 	  }
 
 		if (panel === undefined) {
