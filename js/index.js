@@ -13,5 +13,5 @@ $(".panel-group").sortable({
     handle: ".panel-heading"
 });
 $('.roar').sortable({
-    connectWith: $('.roar')
+    handle: ".panel-heading"
 });
