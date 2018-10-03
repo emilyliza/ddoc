@@ -9,7 +9,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
         scrollTop: $panel.offset().top
       }, 500);
 });
-$(".panel-group, .template").sortable({
+$(".panel-group, .roar").sortable({
     handle: ".panel-heading"
 });
 $('.template').sortable({

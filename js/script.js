@@ -89,6 +89,7 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
+			$(panel).find(".panel-body:first").attr("class", "roar");
 			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
 		}
 	},
