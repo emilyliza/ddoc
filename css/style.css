@@ -1,6 +1,7 @@
 
 #headingOne0 {
   background-color: #70c1b3 !important;
+  opacity: 0.5;
 }
 #headingOne31 {
   background-color: #f3ffbd !important;
@@ -22,4 +23,5 @@
 }
 #headingOne10 {
   background-color: #b2dbbf !important;
+  opacity: 0.5;
 }
