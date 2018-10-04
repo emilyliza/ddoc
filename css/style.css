@@ -34,6 +34,10 @@
 #headingOne10 {
   background-color: #b2dbbf !important;
 }
+#headingOne11,#headingOne12,#headingOne13,#headingOne14,#headingOne15,#headingOne16,#headingOne17,#headingOne18 {
+  background-color: rgba(178, 219, 191,.70 ) !important;
+}
+
 .panel-heading .accordion-toggle:after {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
