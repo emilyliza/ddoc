@@ -543,7 +543,7 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
-			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
+			$($newPanel).find(".panel-body").append("<p>"+description+"</p>").addClass("child");
 		}
 	},
 	
