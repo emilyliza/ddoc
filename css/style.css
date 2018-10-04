@@ -2,6 +2,9 @@
 .panel-body {
   background: #F0F0F0 !important;
 }
+.panel-collapse .panel-body {
+  background: #F8F8F8 !important;
+}
 #headingOne0 {
   background-color: #70c1b3 !important;
 }
