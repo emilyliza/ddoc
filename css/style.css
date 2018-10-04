@@ -8,6 +8,7 @@
 #headingOne0 {
   background-color: #70c1b3 !important;
 }
+
 #headingOne1, #headingOne2, #headingOne3, #headingOne4, #headingOne5, #headingOne6,#headingOne7,#headingOne8,
 #headingOne9 {
   background-color: #cee6e2 !important;
@@ -16,13 +17,19 @@
 #headingOne14 {
   background-color: rgba(243,255,189) !important;
 }
-#headingOne15, #headingOne16, #headingOne17, #headingOne18, #headingOne19, #headingOne20,#headingOne21,#headingOne22,
+#headingOne15, #headingOne16, #headingOne17, #headingOne18, #headingOne19, #headingOne20,#headingOne21,#headingOne22
 {
-  background-color: rgba(243,255,189,.5) !important;
+  background-color: rgba(243,255,189,.50) !important;
 }
 #headingOne22 {
-  background-color: #fe938c !important;
+  background-color: rgba(254,147,140)!important;
 }
+#headingOne23, #headingOne24, #headingOne25, #headingOne26, #headingOne27, #headingOne28,#headingOne29,#headingOne30,
+#headingOne31, #headingOne32, #headingOne33, #headingOne34, #headingOne35, #headingOne36,#headingOne37
+{
+  background-color: rgba(254,147,140,.50)!important;
+}
+
 #headingOne38 {
   background-color: #e6b89c !important;
 }
@@ -38,9 +45,8 @@
 #headingOne10 {
   background-color: #b2dbbf !important;
 }
-background-color: rgba(243,255,189) !important;
 #headingOne11,#headingOne12,#headingOne13 {
-  background-color: rgba(178, 219, 191,.5 ) !important;
+  background-color: rgba(178, 219, 191,.50 ) !important;
 }
 
 .panel-heading .accordion-toggle:after {
