@@ -89,6 +89,7 @@ var CollapseTemplate = {
 
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
+			$newPanel.find(".panel-heading").attr("id", "headingOne" + numId);
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
 			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
@@ -99,7 +100,6 @@ var CollapseTemplate = {
 		$newPanel.find(".collapse").removeClass("in");
 		$newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
-		$newPanel.find(".panel-heading").attr("id", "headingOne" + numId);
 	},
 	
 	
