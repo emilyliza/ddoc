@@ -1,8 +1,12 @@
 
 #headingOne0 {
   background-color: #70c1b3 !important;
-  opacity: 0.5;
 }
+#headingOne0, #headingOne1, #headingOne2, #headingOne3, #headingOne4, #headingOne5, #headingOne6,#headingOne7,#headingOne8,
+#headingOne9 {
+  background-color: #9ccec5 !important;
+}
+
 #headingOne31 {
   background-color: #f3ffbd !important;
 }
@@ -23,5 +27,4 @@
 }
 #headingOne10 {
   background-color: #b2dbbf !important;
-  opacity: 0.5;
 }
