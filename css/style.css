@@ -14,7 +14,11 @@
 }
 
 #headingOne14 {
-  background-color: #f3ffbd !important;
+  background-color: rgba(243,255,189) !important;
+}
+#headingOne15, #headingOne16, #headingOne17, #headingOne18, #headingOne19, #headingOne20,#headingOne21,#headingOne22,
+{
+  background-color: rgba(243,255,189,.5) !important;
 }
 #headingOne22 {
   background-color: #fe938c !important;
@@ -34,6 +38,7 @@
 #headingOne10 {
   background-color: #b2dbbf !important;
 }
+background-color: rgba(243,255,189) !important;
 #headingOne11,#headingOne12,#headingOne13 {
   background-color: rgba(178, 219, 191,.5 ) !important;
 }
