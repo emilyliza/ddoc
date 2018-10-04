@@ -44,91 +44,6 @@
       ]
    },
    {  
-      "name":"Coming Attractions",
-      "childs":[  
-         {  
-            "name":"A Cow Walks Onto A Beach",
-            "description":"Asparagopsis taxiformis, a species of seaweed, shows promise for reducing methane emissions from livestock—currently 6 to 7 percent of annual greenhouse gas emissions."
-         },
-         {  
-            "name":"Artificial Leaf",
-            "description":"The artificial leaf is technology inspired by photosynthesis. It combines solar energy, water, and carbon dioxide, to feed bacteria that synthesize energy-dense fuel."
-         },
-         {  
-            "name":"Autonomous Vehicles",
-            "description":"Autonomous vehicles are on the rise. They have the potential to shrink the auto fleet and accelerate ridesharing and the adoption of electric vehicles."
-         },
-         {  
-            "name":"Building With Wood",
-            "description":"High-performance wood materials are transforming construction. They can reduce emissions by (1) sequestering and storing carbon and (2) avoiding emissions of cement and steel."
-         },
-         {  
-            "name":"Direct Air Capture",
-            "description":"Direct air capture systems are a nascent sequestration technology. Functioning like a chemical sieve and sponge, they capture carbon dioxide from air and release it in purified form."
-         },
-         {  
-            "name":"Enhanced Weathering of Minerals",
-            "description":"Natural weathering of silicate rock sequesters carbon dioxide. Enhanced weathering aims to hasten that process by milling rock powder and applying it to landscapes."
-         },
-         {  
-            "name":"Hydrogen-Boron Fusion",
-            "description":"Tri Alpha Energy has achieved one-half of the nuclear fusion equation. It could herald clean, safe, affordable energy to take the world beyond fossil fuels."
-         },
-         {  
-            "name":"Hyperloop",
-            "description":"The promise of Hyperloop is speed. The virtue is moving people and cargo with 90 to 95 percent less energy than planes, trains, or cars."
-         },
-         {  
-            "name":"Industrial Hemp",
-            "description":"Hemp is a global warming solution primarily because of what it can replace: cotton. Cotton has high chemical use and depends on fossil fuel inputs."
-         },
-         {  
-            "name":"Intensive Silvopasture",
-            "description":"Intensive silvopasture intercrops a leguminous woody shrub with grasses and trees. Through rapid rotational grazing, livestock yields increase alongside carbon sequestration in soil."
-         },
-         {  
-            "name":"Living Buildings",
-            "description":"The Living Building Challenge holistically defines how buildings can benefit both people and planet. One key criteria: Living buildings produce more energy than they use."
-         },
-         {  
-            "name":"Marine Permaculture",
-            "description":"Marine permaculture utilizes floating, latticed structures designed to grow rich kelp forests and foster marine life. It could sequester billions of tons of carbon dioxide."
-         },
-         {  
-            "name":"Microbial Farming",
-            "description":"Microbes have the potential to dramatically reduce the need for synthetic fertilizers, pesticides, and herbicides, while improving crop yields and plant health."
-         },
-         {  
-            "name":"Ocean Farming",
-            "description":"Small-scale ocean farms have the potential to provide sustainable food and biofuel, while oysters filter nitrogen pollution and seaweed sequesters carbon dioxide."
-         },
-         {  
-            "name":"Pasture Cropping",
-            "description":"In a pasture cropping system, annual crops are grown in a perennial pasture. Double-cropping grains and animals sequesters carbon and improves farm health and productivity."
-         },
-         {  
-            "name":"Perennial Crops",
-            "description":"Perennial crops sequester carbon because they leave the soil intact. Researchers are pursuing grain, cereal, and oilseed plants that are perennial food providers."
-         },
-         {  
-            "name":"Repopulating the Mammoth Steppe",
-            "description":"A vast ecosystem called the mammoth steppe once dominated the frozen north. Restoring grazers and grassland could prevent carbon-rich permafrost from thawing and releasing emissions."
-         },
-         {  
-            "name":"Smart Grids",
-            "description":"With two-way communication between suppliers and consumers, smart grids accommodate the fluctuations of wind and solar power. They also improve grid stability and overall efficiency."
-         },
-         {  
-            "name":"Smart Highways",
-            "description":"The world’s first sustainable highway is being pioneered south of Atlanta, Georgia, emphasizing electric vehicle infrastructure and solar power to reduce carbon emissions."
-         },
-         {  
-            "name":"Solid-state Wave Energy",
-            "description":"Solid-state wave energy technology converts the ocean’s kinetic energy without external moving parts. It is more robust in marine environments, rich with untapped renewable energy."
-         }
-      ]
-   },
-   {  
       "name":"Women and Girls",
       "childs":[  
          {  
@@ -448,8 +363,94 @@
             "name":"Wind Turbines (Onshore)",
             "description":"Proliferation of turbines, dropping costs, and heightened performance mean onshore wind farms are at the forefront of initiatives to address global warming."
          }
+        ]
+   		},
+      {  
+      "name":"Coming Attractions",
+      "childs":[  
+         {  
+            "name":"A Cow Walks Onto A Beach",
+            "description":"Asparagopsis taxiformis, a species of seaweed, shows promise for reducing methane emissions from livestock—currently 6 to 7 percent of annual greenhouse gas emissions."
+         },
+         {  
+            "name":"Artificial Leaf",
+            "description":"The artificial leaf is technology inspired by photosynthesis. It combines solar energy, water, and carbon dioxide, to feed bacteria that synthesize energy-dense fuel."
+         },
+         {  
+            "name":"Autonomous Vehicles",
+            "description":"Autonomous vehicles are on the rise. They have the potential to shrink the auto fleet and accelerate ridesharing and the adoption of electric vehicles."
+         },
+         {  
+            "name":"Building With Wood",
+            "description":"High-performance wood materials are transforming construction. They can reduce emissions by (1) sequestering and storing carbon and (2) avoiding emissions of cement and steel."
+         },
+         {  
+            "name":"Direct Air Capture",
+            "description":"Direct air capture systems are a nascent sequestration technology. Functioning like a chemical sieve and sponge, they capture carbon dioxide from air and release it in purified form."
+         },
+         {  
+            "name":"Enhanced Weathering of Minerals",
+            "description":"Natural weathering of silicate rock sequesters carbon dioxide. Enhanced weathering aims to hasten that process by milling rock powder and applying it to landscapes."
+         },
+         {  
+            "name":"Hydrogen-Boron Fusion",
+            "description":"Tri Alpha Energy has achieved one-half of the nuclear fusion equation. It could herald clean, safe, affordable energy to take the world beyond fossil fuels."
+         },
+         {  
+            "name":"Hyperloop",
+            "description":"The promise of Hyperloop is speed. The virtue is moving people and cargo with 90 to 95 percent less energy than planes, trains, or cars."
+         },
+         {  
+            "name":"Industrial Hemp",
+            "description":"Hemp is a global warming solution primarily because of what it can replace: cotton. Cotton has high chemical use and depends on fossil fuel inputs."
+         },
+         {  
+            "name":"Intensive Silvopasture",
+            "description":"Intensive silvopasture intercrops a leguminous woody shrub with grasses and trees. Through rapid rotational grazing, livestock yields increase alongside carbon sequestration in soil."
+         },
+         {  
+            "name":"Living Buildings",
+            "description":"The Living Building Challenge holistically defines how buildings can benefit both people and planet. One key criteria: Living buildings produce more energy than they use."
+         },
+         {  
+            "name":"Marine Permaculture",
+            "description":"Marine permaculture utilizes floating, latticed structures designed to grow rich kelp forests and foster marine life. It could sequester billions of tons of carbon dioxide."
+         },
+         {  
+            "name":"Microbial Farming",
+            "description":"Microbes have the potential to dramatically reduce the need for synthetic fertilizers, pesticides, and herbicides, while improving crop yields and plant health."
+         },
+         {  
+            "name":"Ocean Farming",
+            "description":"Small-scale ocean farms have the potential to provide sustainable food and biofuel, while oysters filter nitrogen pollution and seaweed sequesters carbon dioxide."
+         },
+         {  
+            "name":"Pasture Cropping",
+            "description":"In a pasture cropping system, annual crops are grown in a perennial pasture. Double-cropping grains and animals sequesters carbon and improves farm health and productivity."
+         },
+         {  
+            "name":"Perennial Crops",
+            "description":"Perennial crops sequester carbon because they leave the soil intact. Researchers are pursuing grain, cereal, and oilseed plants that are perennial food providers."
+         },
+         {  
+            "name":"Repopulating the Mammoth Steppe",
+            "description":"A vast ecosystem called the mammoth steppe once dominated the frozen north. Restoring grazers and grassland could prevent carbon-rich permafrost from thawing and releasing emissions."
+         },
+         {  
+            "name":"Smart Grids",
+            "description":"With two-way communication between suppliers and consumers, smart grids accommodate the fluctuations of wind and solar power. They also improve grid stability and overall efficiency."
+         },
+         {  
+            "name":"Smart Highways",
+            "description":"The world’s first sustainable highway is being pioneered south of Atlanta, Georgia, emphasizing electric vehicle infrastructure and solar power to reduce carbon emissions."
+         },
+         {  
+            "name":"Solid-state Wave Energy",
+            "description":"Solid-state wave energy technology converts the ocean’s kinetic energy without external moving parts. It is more robust in marine environments, rich with untapped renewable energy."
+         }
       ]
    }
+     
 ]};
  var jsonold = {
         solutionsold: [
