@@ -89,7 +89,6 @@ var CollapseTemplate = {
 
 		if (panel === undefined) {
 			$("#" + this.params.parentId).append($newPanel.show());
-			$newPanel.find(".panel-heading").attr("id", "headingOne" + numId);
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
 			$($newPanel).find(".panel-body").append("<p>"+description+"</p>");
