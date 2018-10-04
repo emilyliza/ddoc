@@ -13,3 +13,4 @@ $(".panel-group").sortable({
     handle: ".panel-heading",
     nested: true
 });
+
