@@ -2,7 +2,7 @@
 .panel-body {
   background: #FFFFFF !important;
 }
-.panel-collapse .panel-body {
+.panel-collapse {
   background: #F8F8F8 !important;
 }
 #headingOne0 {
