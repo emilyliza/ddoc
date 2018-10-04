@@ -11,7 +11,7 @@ $('.panel-collapse').on('shown.bs.collapse', function(e) {
 });
 $('.panel-collapse').on('hidden.bs.collapse', function () {
   // find the children and close them
-  $(this).find('.collapse').collapse('hide');
+  $(this).find('.panel-collapse').collapse('hide');
 });
 // $(".panel-group").sortable({
 //     handle: ".panel-heading",
