@@ -1,4 +1,80 @@
-
+.panel1 {
+  width: 60%;
+  margin-left: 20px;
+}
+.accordion-default {
+  border-bottom: 1px solid #C8C8C8;
+}
+.accordion-heading > a {
+  display: block;
+  line-height: 1.875;
+  font-size: 16px;
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.accordion-heading > a:hover {
+  text-decoration: none;
+  color: #D0006F;
+}
+.accordion-heading > a:active {
+  text-decoration: none;
+  color: #D0006F;
+}
+.accordion-heading > a:focus {
+  text-decoration: none;
+  color: #D0006F;
+}
+.accordion-body {
+  margin-left: 2px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.accordion-toggle {
+  padding-left: 2px;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+}
+.accordion-toggle::before, .accordion-toggle::after {
+  right: 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  margin-top: -2px;
+  background-color: #D0006F;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.accordion-toggle::before {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  opacity: 0;
+}
+.accordion-toggle.collapsed::before {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  opacity: 1;
+  text-decoration: none;
+}
+.accordion-toggle.collapsed::after {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-decoration: none;
+}
 .panel-body {
   background: #FFFFFF !important;
 }
