@@ -17,6 +17,20 @@
             display: none;
           }
     </style>
+    <script>
+    var collapseTemplate = Object.create(CollapseTemplate);
+    var params = {
+        templateSelector: 'div.templateContainer > div.template',
+        parentId: 'accordion'
+     };
+    
+    jQuery(document).ready( function() {
+
+      collapseTemplate.init(params);
+      collapseTemplate.load(json);
+  });
+
+    </script>
   </head>
 
 <body>
