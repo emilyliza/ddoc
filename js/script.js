@@ -453,6 +453,10 @@
      
 ]};
 
+$('document').ready(function(){
+  initialize();
+});
+
 var CollapseTemplate = {
 	params : {
 		templateSelector : '.template',
@@ -514,6 +518,16 @@ var CollapseTemplate = {
 		});
 
 	}
+};
+
+function initialize(){
+    var collapseTemplate = Object.create(CollapseTemplate);
+    var params = {
+        templateSelector: 'div.templateContainer > div.template',
+        parentId: 'accordion'
+     };
+      collapseTemplate.init(params);
+      collapseTemplate.load(json);   
 };
 
 Global =	{
