@@ -452,55 +452,6 @@
    }
      
 ]};
- var jsonold = {
-        solutionsold: [
-            {
-              name:'Women and Girls', childs: [
-                {name:'women shareholders', description: " testing1yyyy", childs:null},
-                {name:'educating girls', description: " testing2", childs:null},
-                {name:'educating girls2', description: " testing3", childs:null},
-                {name:'educating girls34', description: " testing4", childs:null}
-              ]
-            },
-            {
-              name:'Food Waste', childs: [
-                {name:'composting', description: " testing3", childs:null},
-                {name:'pickles', description: " testing4", childs:null}
-              ]
-            },
-            {
-              name:'Energy', childs: [
-              	{name:'electricity', description: " testing5", childs:null},
-                {name:'solar roofs', description: " testing6", childs:null}
-              ]
-            },
-            {
-              name:'Transport', childs: [
-                {name:'cars', description: "testing7", childs:null},
-                {name:'bikes', description: "testing8", childs:null}
-              ]
-            },
-            {
-              name:'Buildings and Cities', childs: [
-                {name:'green roofs', description: "testing9", childs:null},
-                {name:'walkable cities', description: "testing10", childs:null}
-              ]
-            },
-            {
-              name:'Materials', childs: [
-                {name:'smart glass', description: "testing11", childs:null},
-                {name:'bike infrastructure', description: "testing12", childs:null}
-              ]
-            },
-            {
-              name:'Energy', childs: [
-                {name:'solar farms', description: "testing13", childs:null},
-                {name:'microgrids', description: "testing14", childs:null}
-              ]
-            }
-          ]
-      };
-
 
 var CollapseTemplate = {
 	params : {
