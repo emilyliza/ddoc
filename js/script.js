@@ -494,13 +494,13 @@ var CollapseTemplate = {
 			$("#" + this.params.parentId).append($newPanel.show());
 		} else {
 			$(panel).find(".panel-body:first").append($newPanel);
-			$($newPanel).find(".panel-body").append("<p>"+description+"</p>").addClass("child");
+			$($newPanel).find(".panel-body").append("<p>"+ $(description)+"</p>").addClass("child");
 		}
 	},
 	
 	drawHeader : function(name,  $newPanel, numId, dataParentId) {
 		$newPanel.find(".collapse").removeClass("in");
-		$newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
+		$newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text($(name)).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 		$newPanel.find(".panel-heading").attr("id", "headingOne" + numId);
 	},
