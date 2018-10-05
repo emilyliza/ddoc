@@ -1,4 +1,3 @@
-// Code goes here
  
  var json = {
         solutions: [
@@ -452,7 +451,7 @@
    }
      
 ]};
-
+console.log(json);
 
 var CollapseTemplate = {
 	params : {
@@ -474,7 +473,6 @@ var CollapseTemplate = {
 
   //create panel
 	draw : function(name, childs, panel, description) {
-
 		//set new id
 		var numId = Global.getNextNumCollapseElement();
 		var template = $(this.params.templateSelector);
