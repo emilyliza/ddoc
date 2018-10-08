@@ -1,5 +1,11 @@
 
-.arrow-down {
+.panel-heading-custom .accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e094";
+    float: right;
+    color: grey;
+}
+.panel-heading-custom .accordion-toggle:after {
   width: 0; 
   height: 0; 
   border-left: 10px solid transparent;

@@ -501,7 +501,7 @@ var CollapseTemplate = {
 	drawHeader : function(name,  $newPanel, numId, dataParentId) {
 		$newPanel.find(".collapse").removeClass("in");
       $newPanel.find(".panel-title").append(
-      '<a class="accordion-toggle accordion-caret"role="button"data-toggle="collapse"data-parent="#accordion"href="#collapseOne"aria-expanded="true"aria-controls="collapseOne"></a>');
+      '<a class="accordion-toggle"role="button"data-toggle="collapse"data-parent="#accordion"href="#collapseOne"aria-expanded="true"aria-controls="collapseOne"></a>');
 		$newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr(	"data-parent", dataParentId).attr("id", "link-"+numId);
 		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
 		$newPanel.find(".panel-heading-custom").attr("id", "headingOne" + numId);
