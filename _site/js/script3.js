@@ -604,11 +604,13 @@ var CollapseTemplate = {
       $newPanel.find(".panel-title").empty().append(
       '<a class="accordion-toggle collapsed"role="button"data-toggle="collapse"data-parent="#accordion"href="#collapseOne"aria-expanded="false"aria-controls="collapseOne"></a>');
 		if (dataParentId !== "accordion"){
-         $newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).html("<span class='title-hyphen'>– </span>" + name).attr("data-parent", dataParentId).attr("id", "link-"+numId);
+         $newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr("data-parent", dataParentId).attr("id", "link-"+numId);
+         $newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").addClass("in");
       } else {
          $newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr("data-parent", dataParentId).attr("id", "link-"+numId);
+         $newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
       }  
-		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
+		
 		$newPanel.find(".panel-heading-custom").attr("id", "headingOne" + numId);
 	 },
 	

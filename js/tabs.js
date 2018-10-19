@@ -554,91 +554,19 @@
      
 ]};
 
-var CollapseTemplate = {
-	params : {
-		templateSelector : '.template',
-		parentId : 'accordion'
-	},
-
-	init : function(_params) {
-		this.params = Utils.extend({}, this.params, _params);
-	},
-	
-	load : function(json) {
-		$("#" + this.params.parentId).empty();
-		var _this = this;
-		$.each(json.solutions, function(i, val) {
-			_this.draw(val.name, val.childs, undefined);
-		});
-	},
-
-  //create panel
-	draw : function(name, childs, panel, description, image) {
-		//set new id
-		var numId = Global.getNextNumCollapseElement();
-		var template = $(this.params.templateSelector);
-		var $newPanel = template.clone();
-		var dataParentId = this.params.parentId;
-	
-		if (panel !== undefined) {
-			dataParentId = $(panel).find(".panel-collapse").attr("id");
-		}
-		
-		$($newPanel).attr("id", "panel" + numId);	
-		this.drawHeader(name, $newPanel, numId, dataParentId);
-	
-		if (childs !== null){	
-		 this.drawChildNodesArray(childs, $newPanel, numId);	
-	  }
-
-		if (panel === undefined) {
-			$("#" + this.params.parentId).append($newPanel.show());
-		} else {
-			$(panel).find(".panel-body:first").append($newPanel);
-			$($newPanel).find(".panel-body").empty().append('<img src="'+ image +'"style="float: left; vertical-align:middle; height: 75px; width: 75px; margin: 0px 10px 0px 0px;">'+ description).addClass("child");
-		}
-	},
-	
-	drawHeader : function(name,  $newPanel, numId, dataParentId) {
-		$newPanel.find(".collapse").removeClass("in");
-      $newPanel.find(".panel-title").empty().append(
-      '<a class="accordion-toggle collapsed"role="button"data-toggle="collapse"data-parent="#accordion"href="#collapseOne"aria-expanded="false"aria-controls="collapseOne"></a>');
-		if (dataParentId !== "accordion"){
-         $newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).html("<span class='title-hyphen'>– </span>" + name).attr("data-parent", dataParentId).attr("id", "link-"+numId);
-      } else {
-         $newPanel.find(".accordion-toggle").attr("href", "#collapse" + numId).text(name).attr("data-parent", dataParentId).attr("id", "link-"+numId);
-      }  
-		$newPanel.find(".panel-collapse").attr("id", "collapse" + numId).addClass("collapse").removeClass("in");
-		$newPanel.find(".panel-heading-custom").attr("id", "headingOne" + numId);
-	 },
-	
-	
-	drawChildNodesArray : function(childs, $newPanel, numId) {
-		var _this = this;
-		$.each(childs, function(i, val) { 
-			 _this.draw(val.name, val.childs, $newPanel, val.description, val.image);
-		});
-
-	}
-};
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
 
 
-Global =	{
-	countCollapseElements: 0,
-	getNextNumCollapseElement : function() {
-		return this.countCollapseElements++;
-	}
-};
 
-Utils = {
-	extend : function(dest) {
-		var sources = Array.prototype.slice.call(arguments, 1);
-		sources.forEach(function(source) {
-			Object.keys(source).forEach(function(key) {
-				dest[key] = source[key];
-			});
-		});
-		return dest;
-	}
-
-};

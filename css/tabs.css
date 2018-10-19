@@ -1,0 +1,107 @@
+
+/**, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background:white;
+}
+img {
+  max-width:100%;
+}
+
+.container-custom {
+    width: 100%;
+    padding-left: 70px;
+}
+
+.card-grid {
+  width: 100%;
+  padding-left: 10px;
+}
+.card-grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card-wrap {
+  float:left;
+  width: 100%;
+  padding: 0 5px 10px 5px;
+}
+
+@media (min-width: 500px) {
+  .card-wrap {
+    width:50%;
+  }
+}
+@media (min-width: 720px) {
+  .card-wrap {
+    width: 25%;
+  }
+}
+
+
+.card {
+  background-color:white;
+  border-radius:5px;
+  border:1px solid #ccc;
+  border-bottom:2px solid #ccc;
+  width: 200px;
+  height: 300px;
+}
+.card > div {
+  padding:0 1em;
+}*/
+
+/* Style the tab */
+.tab {
+    float: left;
+    /*border: 1px solid #ccc;*/
+    background-color: white;
+    width: 15%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-left:25px;
+   /* height: 550px;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: transparent;
+    color: black;
+    padding: 15px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px;
+    /*border: 1px solid #ccc;*/
+    width: 80%;
+    border-left: none;
+    height: auto;
+}
