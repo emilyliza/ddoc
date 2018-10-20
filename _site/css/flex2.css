@@ -1,13 +1,62 @@
+.tab {
+    float: left;
+    /*border: 1px solid #ccc;*/
+    background-color: white;
+    width: 15%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-left:25px;
+   /* height: 550px;*/
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: transparent;
+    color: black;
+    padding: 15px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: flex;
+    /*float: left;*/
+    padding: 0px;
+    /*border: 1px solid #ccc;*/
+    width: 80%;
+    border-left: none;
+    height: auto;
+}
+
 
 .main-area {padding: 0 15px 15px 15px;}
 .cards p {margin-bottom: 1em;}
 .cards h2 {font-size: 1.5em;}
 
 img {
-	display: block;
-	border: 0;
-	width: 100%;
-	height: auto;
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
 }
 
 /* Flexbox */
@@ -47,32 +96,32 @@ img {
 /* Card Based Layout - Base styles */
 
 .card {
-	background: white;
-	margin-bottom: .5em;	
+    background: white;
+    margin-bottom: .5em;    
 }
 
 .card a {
-	color: black;
-	text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 .card a:hover {
-	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+    box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
   transition: all 0.4s;
 }
 
 .card-content {
-	padding: .5em;
+    padding: .5em;
 }
 
 .card-content h2 {
-	margin-top: 0;
-	margin-bottom: .5em;
-	font-weight: normal;
+    margin-top: 0;
+    margin-bottom: .5em;
+    font-weight: normal;
 }
 
 .card-content p {
-	font-size: 95%;
+    font-size: 95%;
 }
 
 /* Flexbox stuff */
@@ -85,9 +134,9 @@ img {
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
-        -webkit-justify-content: flex-start;
+        -webkit-justify-content: space-between;
             -ms-flex-pack: justify;
-                justify-content: flex-start;
+                justify-content: space-between;
         margin-top: -1em;
     }
 
@@ -99,14 +148,19 @@ img {
             -ms-flex: 0 1 calc(50% - .5em);
                 flex: 0 1 calc(50% - .5em);
         margin-bottom: 0em;
-        padding: 2px;
     }
 }
 
 @media screen and (max-width: 39.9em) {
   
-  .main-area {padding: 0em;}
-  .card {margin-bottom: 0em;}
+  .main-area {padding: 0em; display: flex;}
+  .card {margin-bottom: 0em; }
+  .tab{width:80%; display: flex;}
+  .tabcontent {display: flex; padding:25px;}  
+  .flex-container {flex-direction: column;}
+  .tab{flex-direction:column;}  
+  .container {padding-left: 5px;}
+  
 }
 
 @media screen and (min-width: 60em) {
@@ -115,10 +169,9 @@ img {
     }
     
     .card {
-        -webkit-flex: 0 1 calc(25% - 1em);
-            -ms-flex: 0 1 calc(25% - 1em);
+        -webkit-flex: 0 1 calc(33% - 1em);
+            -ms-flex: 0 1 calc(33% - 1em);
                 flex: 0 1 calc(33% - 1em);
         margin-bottom: 0em;
-        padding: 5px;
     }
 }

@@ -155,9 +155,11 @@ img {
 
 @media screen and (max-width: 39.9em) {
   
-  .main-area {padding: 0em;}
-  .card {margin-bottom: 0em;}
-  .tab{width:50%;}	
+  .main-area {padding: 0em; display: flex;}
+  .card {margin-bottom: 0em; }
+  .tab{width:100%; display: flex;}
+  .tabcontent {display: flex;}	
+  
 }
 
 @media screen and (min-width: 60em) {
