@@ -1,49 +1,36 @@
-.tab {
-    display: flex;
-    flex-direction: column;
-    /*float: left;*/
-    background-color: white;
-    width: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-left:15px;
-    align-content: flex-start;
-    margin-bottom: 10px;
+/*.container {
+    width: 700px;
+    padding-left: 200px;
+}*/
+
+.solution-tablinks a.solution-tab {
+    display: inline-block;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 5px 5px 0;
+    padding: 0 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-    display: block;
-    background-color: transparent;
-    color: black;
-    padding: 5px;
-    /*width: 100%;*/
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 16px;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
+.solution-tablinks a.active {
+   background-color: #efefef;
+   cursor: pointer;
+ }   
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
+.solution-tablinks a:hover {
+    background-color: #efefef;
+    cursor: pointer;
 }
 
-/* Create an active/current "tab button" class */
-.tab button.active {
-    background-color: #ccc;
-}
 
 /* Style the tab content */
 .tabcontent {
     display: flex;
-    /*float: left;*/
     padding-top: 20px;
-    /*border: 1px solid #ccc;*/
     width: 100%;
     border-left: none;
     height: auto;
@@ -157,10 +144,8 @@ img {
   
   .main-area {padding: 0em; display: flex;}
   .card {margin-bottom: 0em; }
-  .tab{width:80%; display: flex;}
   .tabcontent {display: flex; padding:25px;}  
   .flex-container {flex-direction: column;}
-  .tab{flex-direction:column;}  
   .container {padding-left: 5px;}
   
 }

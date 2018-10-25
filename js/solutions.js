@@ -554,13 +554,14 @@
      
 ]};
 
+
 function openSector(evt, sectorName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName("solution-tab");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -568,7 +569,7 @@ function openSector(evt, sectorName) {
     evt.currentTarget.className += " active";
 }
 
-$(document).ready(function() {
+$(window).load(function() {
     $.each(json.solutions, function(i, val) {
         drawCards(val.name, val.childs);
     });
