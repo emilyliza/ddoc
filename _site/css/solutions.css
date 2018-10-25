@@ -3,6 +3,9 @@
     padding-left: 200px;
 }*/
 
+.solution-tablinks {
+    margin-bottom: 15px;
+}
 .solution-tablinks a.solution-tab {
     display: inline-block;
     font-size: 14px;
