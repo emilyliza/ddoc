@@ -581,7 +581,7 @@ $(document).ready(function() {
                 '<picture class="thumbnail"><img alt="img" src="https://dummyimage.com/100X50/000/fff"></picture>' +
                 '<div class="solution-card-content">' +
                 '<h2>' + val.name + '</h2>' +
-                '<p>A' + val.description + '</p>' +
+                '<p>' + val.description + '</p>' +
                 '</div>' +
                 '</a>' +
                 '</article>');

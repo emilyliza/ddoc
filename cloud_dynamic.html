@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+    <div id="wordCloudBox"></div>
+    <hr>
+    <button onclick="showNewWords(myWordCloud)">Click me</button>
+    <form id="testForm">
+  Word One:<br>
+  <input type="text" name="word1"><br>
+  Word Two:<br>
+  <input type="text" name="word2"><br>
+  Word Three:<br>
+  <input type="text" name="word3"><br>
+  Word Four:<br>
+  <input type="text" name="word4"><br>
+  Word Five:<br>
+  <input type="text" name="word5">
+  <input type="submit" value="Send">
+</form>
+
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+  <script>
+
+//get all the words
+$.getJSON("https://spreadsheets.google.com/feeds/cells/1aEuuC49_hTMEIsycU2xLL0m9eITOpEXJyoodS_wckNE/default/public/values?alt=json", function(data) {
+    for (var i = 0; i < data.feed.entry.length; i++){
+        console.log(data.feed.entry[i]['gs$cell']['$t']);
+        words.push(data.feed.entry[i]['gs$cell']['$t']);
+    }
+});
+
+var request;
+
+// Bind to the submit event of our form
+$("#testForm").submit(function(event){
+
+    // Prevent default posting of form - put here to work in case of errors
+    event.preventDefault();
+
+    // Abort any pending request
+    if (request) {
+        request.abort();
+    }
+    var $form = $(this);
+    var $inputs = $form.find("input,text");
+    var serializedData = $form.serialize();
+
+    // disable the inputs for the duration of the Ajax request.
+    $inputs.prop("disabled", true);
+
+    request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbyjera18LFXsy_iw7KmnTvos87kbvjGpzECCB6QlmHe2e2YOSk/exec",
+        type: "post",
+        data: serializedData
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        console.log("Hooray, it worked!");
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+    // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+
+   document.getElementById("testForm").reset();
+});
+
+// Encapsulate the word cloud functionality
+function wordCloud(selector) {
+
+    var fill = d3.scale.category20();
+
+    //Construct the word cloud's SVG element
+    var svg = d3.select(selector).append("svg")
+        .attr("width", 500)
+        .attr("height", 500)
+        .append("g")
+        .attr("transform", "translate(250,250)");
+
+
+    //Draw the word cloud
+    function draw(words) {
+        var cloud = svg.selectAll("g text")
+                        .data(words, function(d) { return d.text; })
+
+        //Entering words
+        cloud.enter()
+            .append("text")
+            .style("font-family", "Arial")
+            .style("fill", function(d, i) { return fill(i); })
+            .attr("text-anchor", "middle")
+            .attr('font-size', 1)
+            .text(function(d) { return d.text; });
+
+        //Entering and existing words
+        cloud
+            .transition()
+                .duration(600)
+                .style("font-size", function(d) { return d.size + "px"; })
+                .attr("transform", function(d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                .style("fill-opacity", 1);
+
+        //Exiting words
+        cloud.exit()
+            .transition()
+                .duration(200)
+                .style('fill-opacity', 1e-6)
+                .attr('font-size', 1)
+                .remove();
+    }
+
+
+    //Use the module pattern to encapsulate the visualisation code. We'll
+    // expose only the parts that need to be public.
+    return {
+
+        //Recompute the word cloud for a new set of words. This method will
+        // asycnhronously call draw when the layout has been computed.
+        //The outside world will need to call this function, so make it part
+        // of the wordCloud return value.
+        update: function(words) {
+            d3.layout.cloud().size([500, 500])
+                .words(words)
+                // .padding(2)
+                // .rotate(function() { return ~~(Math.random() * 6- 2.5) * 30; })
+                .rotate(function() { return ~~(Math.random() * 6 - 3) * 30; })
+                // .rotate(function() { return ~~(Math.random() * 2) * 70; })
+                .font("Arial")
+                .fontSize(function(d) { return d.size; })
+                .on("end", draw)
+                .start();
+        }
+    }
+
+}
+
+var words = []
+
+//Prepare by removing punctuation,
+// creating an array of words and computing a random size attribute.
+function getWords(i) {
+    console.log(words[i]);
+    return words
+            // .replace(/[!\.,:;\?]/g, '')
+            // .split(' ')
+            .map(function(d) {
+                return {text: d, size: 10 + Math.random() * 30};
+            })
+}
+
+//This method tells the word cloud to redraw with a new set of words.
+function showNewWords(vis, i) {
+    i = i || 0;
+
+    vis.update(getWords(i ++ % words.length))
+    // setTimeout(function() { showNewWords(vis, i + 1)}, 2000)
+}
+
+//Create a new instance of the word cloud visualisation.
+var myWordCloud = wordCloud('#wordCloudBox');
+
+//Start cycling through the data
+// showNewWords(myWordCloud);
+
+
+</script>

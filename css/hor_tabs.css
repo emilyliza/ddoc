@@ -4,7 +4,7 @@
 }*/
 
 .solution-tablinks {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 .solution-tablinks a.solution-tab {
     display: inline-block;
@@ -19,7 +19,7 @@
 }
 
 .solution-tablinks a.active {
-   background-color: #efefef;
+   background-color: #ddd;
    cursor: pointer;
  }   
 
@@ -39,7 +39,7 @@
     height: auto;
 }
 
-.learn-more{color: #00afd7; bottom:0px; left: 0px;}
+/*.learn-more{color: #00afd7; bottom:0px; left: 0px;}*/
 .main-area {padding: 0 15px 15px 15px;}
 .solution-cards p {margin-bottom: 1em;}
 .solution-cards h2 {font-size: 1.5em;}
@@ -89,21 +89,24 @@ img {
 
 .solution-card {
     background: white;
-    margin-bottom: 1em;    
+    margin-bottom: 2em;   
+    position: relative;
 }
 
-.solution-card a {
+
+.solution-card span {
     font-weight: 300;
     text-decoration: none;
+    box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
 }
 
-.solution-card a:hover {
+.solution-card span:hover {
     box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
     transition: all 0.4s;
 }
 
 .solution-card-content {
-    padding: .5em;
+    padding: .7em; 
 }
 
 .solution-card-content h2 {
@@ -116,6 +119,8 @@ img {
     font-size: 95%;
 }
 
+.learn-more {color: #00afd7; bottom:0px; right: 20px; text-decoration: none; padding-top: 15px; position: absolute;}
+.learn-more a {color: #00afd7; text-decoration: none;}
 /* Flexbox stuff */
 
 @media screen and (min-width: 40em) {
@@ -132,6 +137,7 @@ img {
         margin-top: -1em;
     }
 
+
     .solution-card {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -139,7 +145,7 @@ img {
         -webkit-flex: 0 1 calc(50% - .5em);
             -ms-flex: 0 1 calc(50% - .5em);
                 flex: 0 1 calc(50% - .5em);
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
 }
 
@@ -149,7 +155,6 @@ img {
   .card {margin-bottom: 0em; }
   .tabcontent {display: flex; padding:25px;}  
   .flex-container {flex-direction: column;}
-  .container {padding-left: 5px;}
   
 }
 
@@ -159,9 +164,9 @@ img {
     }
     
     .solution-card {
-        -webkit-flex: 0 1 calc(33% - 1em);
-            -ms-flex: 0 1 calc(33% - 1em);
-                flex: 0 1 calc(33% - 1em);
-        margin-bottom: 1em;
+        -webkit-flex: 0 1 calc(50% - 1em);
+            -ms-flex: 0 1 calc(50% - 1em);
+                flex: 0 1 calc(50% - 1em);
+        margin-bottom: 2em;
     }
 }

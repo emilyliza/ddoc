@@ -5,12 +5,12 @@ var land = [],
 	transport =[],
 	girls =[],
 	food =[],
-  electricity = [],
-  buildings = [],
-  materials = [];
+    electricity = [],
+    buildings = [],
+    materials = [];
 
 for (var i=0, max=all.length; i < max; i++) {
-    var title = all[i].getElementsByClassName('solution-title');
+        var title = all[i].getElementsByClassName('solution-title');
 		var teaser = all[i].getElementsByClassName('teaser');
 		var sector = all[i].getElementsByClassName('sector-link');
     if (sector[0].innerText === "Land Use"){

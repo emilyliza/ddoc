@@ -19,7 +19,7 @@
 }
 
 .solution-tablinks a.active {
-   background-color: #efefef;
+   background-color: #ddd;
    cursor: pointer;
  }   
 
@@ -119,7 +119,7 @@ img {
     font-size: 95%;
 }
 
-.learn-more {color: #00afd7; bottom:0px; left: 10px; text-decoration: none; padding-top: 15px; position: absolute;}
+.learn-more {color: #00afd7; bottom:0px; right: 20px; text-decoration: none; padding-top: 15px; position: absolute;}
 .learn-more a {color: #00afd7; text-decoration: none;}
 /* Flexbox stuff */
 
@@ -164,9 +164,9 @@ img {
     }
     
     .solution-card {
-        -webkit-flex: 0 1 calc(33% - 1em);
-            -ms-flex: 0 1 calc(33% - 1em);
-                flex: 0 1 calc(33% - 1em);
+        -webkit-flex: 0 1 calc(50% - 1em);
+            -ms-flex: 0 1 calc(50% - 1em);
+                flex: 0 1 calc(50% - 1em);
         margin-bottom: 2em;
     }
 }
