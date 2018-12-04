@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Drawdown Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+      <link href="css/nested.css" rel="stylesheet"> 
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="js/temp.js"></script>
+      <style type="text/css">div.templateContainer {
+            display: none;
+          }
+</style>
+<script>
+    var collapseTemplate = Object.create(CollapseTemplate);
+    var params = {
+        templateSelector: 'div.templateContainer > div.template',
+        parentId: 'accordion'
+     };
+    
+    jQuery(document).ready( function() {
+
+      collapseTemplate.init(params);
+      collapseTemplate.load(json);
+  
+  });
+
+    </script>
+<div class="container demo">
+<h2 align="center">Drawdown Solutions by Sector2</h2>
+
+<div class="templateContainer">
+<div class="panel panel-default template">
+<div class="panel-heading-custom my-heading " id="headingOne" role="tab">
+<div class="panel-title"></div>
+</div>
+
+<div aria-labelledby="headingOne" class="panel-collapse collapse in" id="collapseOne" role="tabpanel">
+<div class="panel-body"></div>
+</div>
+</div>
+</div>
+&nbsp;
+
+<div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">&nbsp;</div>
+</div>
+
+<p>&nbsp;</p>
+<br><br>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <h3> Buildings and Cities</h3>
+
+<div>	District Heating	</div>
+<div>	Insulation	</div>
+<div>	LED Lighting (Household)	</div>
+<div>	Heat Pumps	</div>
+<div>	LED Lighting (Commercial)	</div>
+<div>	Building Automation	</div>
+<div>	Walkable Cities	</div>
+<div>	Smart Thermostats	</div>
+<div>	Landfill Methane	</div>
+<div>	Bike Infrastructure	</div>
+<div>	Smart Glass	</div>
+<div>	Water Distribution	</div>
+<div>	Green Roofs	</div>
+<div>	Net Zero Buildings	</div>
+<div>	Retrofitting	</div>
+
+<h3> Energy</h3>
+
+<div>	Wind Turbines (Onshore)	</div>
+<div>	Solar Farms	</div>
+<div>	Rooftop Solar	</div>
+<div>	Geothermal	</div>
+<div>	Nuclear	</div>
+<div>	Wind Turbines (Offshore)	</div>
+<div>	Concentrated Solar	</div>
+<div>	Wave and Tidal	</div>
+<div>	Methane Digesters (Large)	</div>
+<div>	Biomass	</div>
+<div>	Solar Water	</div>
+<div>	In-Stream Hydro	</div>
+<div>	Cogeneration	</div>
+<div>	Methane Digesters (Small)	</div>
+<div>	Waste-to-Energy	</div>
+<div>	Micro Wind	</div>
+<div>	Energy Storage (Distributed)	</div>
+<div>	Energy Storage (Utilities)	</div>
+<div>	Grid Flexibility	</div>
+<div>	Microgrids	</div>
+
+<h3> Food </h3>
+
+<div>	Reduced Food Waste	</div>
+<div>	Plant-Rich Diet	</div>
+<div>	Silvopasture	</div>
+<div>	Regenerative Agriculture	</div>
+<div>	Tropical Staple Trees	</div>
+<div>	Conservation Agriculture	</div>
+<div>	Tree Intercropping	</div>
+<div>	Managed Grazing	</div>
+<div>	Clean Cookstoves	</div>
+<div>	Farmland Restoration	</div>
+<div>	Improved Rice Cultivation	</div>
+<div>	Multistrata Agroforestry	</div>
+<div>	System of Rice Intensification	</div>
+<div>	Composting	</div>
+<div>	Nutrient Management	</div>
+<div>	Farmland Irrigation	</div>
+<div>	Biochar	</div>
+
+
+<h3> Land Use </h3>
+
+<div>	Tropical Forests	</div>
+<div>	Temperate Forests	</div>
+<div>	Peatlands	</div>
+<div>	Afforestation	</div>
+<div>	Bamboo	</div>
+<div>	Forest Protection	</div>
+<div>	Indigenous Peoples’ Land Management	</div>
+<div>	Perennial Biomass	</div>
+<div>	Coastal Wetland	</div>
+
+
+<h3> Materials </h3>
+
+<div>	Refrigerant Management	</div>
+<div>	Alternative Cement	</div>
+<div>	Water Saving - Home	</div>
+<div>	Bioplastic	</div>
+<div>	Household Recycling	</div>
+<div>	Industrial Recycling	</div>
+<div>	Recycled Paper	</div>
+
+
+<h3> Transport </h3>
+
+<div>	Electric Vehicles	</div>
+<div>	Ships	</div>
+<div>	Mass Transit	</div>
+<div>	Trucks	</div>
+<div>	Airplanes	</div>
+<div>	Cars	</div>
+<div>	Telepresence	</div>
+<div>	High-speed Rail	</div>
+<div>	Electric Bikes	</div>
+<div>	Trains	</div>
+<div>	Ridesharing	</div>
+
+
+<h3> Women and Girls <h3>
+
+<div>	Educating Girls	</div>
+<div>	Family Planning	</div>
+<div>	Women Smallholders	</div>
+
+
+<div> 1Refrigerant Management</div>
+<div>2Wind Turbines (Onshore)</div>
+<div>3Reduced Food Waste</div>
+<div>4Plant-Rich Diet</div>
+<div>5Tropical Forests</div>
+<div>Educating Girls</div> 
+<div>Family Planning</div>
+<div>Solar Farms</div>
+<div>Silvopasture</div>
+<div>Rooftop Solar</div>
+<div>Regenerative Agriculture</div> 
+<div>Temperate Forests</div>
+<div>Peatlands</div> 
+<div>Tropical Staple Trees</div>
+<div>Afforestation</div>
+<div>Conservation Agriculture</div>
+<div>Tree Intercropping</div>
+<div>Geothermal</div> 
+<div>Managed Grazing</div>
+<div>Nuclear</div> 
+<div>Clean Cookstoves</div>
+<div>Wind Turbines (Offshore)</div>
+<div>Farmland Restoration</div>
+<div>Improved Rice Cultivation</div>
+<div>Concentrated Solar</div>
+<div>Electric Vehicles</div>
+<div>District Heating</div>
+<div>Multistrata Agroforestry</div>
+<div>Wave and Tidal</div>
+<div>Methane Digesters (Large)</div>
+<div>Insulation</div>
+<div>Ships Transport</div>
+<div>LED Lighting (Household)</div>
+<div>Biomass</div>
+<div>Bamboo </div> 
+<div>Alternative Cement</div>
+<div>Mass Transit</div>
+<div>Forest Protection</div>
+<div>Indigenous Peoples’ Land Management</div>
+<div>Trucks</div>
+
+
+
+ -->

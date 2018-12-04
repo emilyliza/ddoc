@@ -1,10 +1,12 @@
-/*.container {
-    width: 700px;
+.container {
+    width: 800px;
     padding-left: 200px;
-}*/
+}
 
 .solution-tablinks {
     margin-bottom: 0px;
+    padding: 10px;
+    text-align: center;
 }
 .solution-tablinks a.solution-tab {
     display: inline-block;
@@ -12,7 +14,7 @@
     height: 28px;
     line-height: 28px;
     margin: 0 5px 5px 0;
-    padding: 0 18px;
+    padding: 0 5px;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 5px;

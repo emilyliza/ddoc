@@ -1,0 +1,95 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/** {box-sizing: border-box;}*/
+
+.wrapper {
+  /*border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;*/
+  /*width: 600px;*/
+}
+
+.wrapper > div {
+  border: 2px solid #F38B00;
+  border-radius: 5px;
+  background-color: #F38B00;
+  padding: 5px;
+  color: #fff;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper > div {
+  flex: 1 1 auto;
+}
+
+.wrapper > .grey {
+  border: 2px solid #636466;
+  border-radius: 5px;
+  background-color: #636466;
+  padding: 5px;
+  color: #fff;
+  margin: 5px;
+}
+
+.grey > div {
+  background-color: ;
+}
+.grey:before {
+   content: '\2713'; 
+   padding-right: 2px;
+}
+
+.sector_title {
+  color: #636466;
+}
+.container1 {
+  width: 300px;
+  float: left;
+  padding-left: 10px;
+}
+.container2 {
+  width: 300px;
+  float:right;
+  padding-right: 10px;
+}
