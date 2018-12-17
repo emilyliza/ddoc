@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Drawdown Solutions</title>
   
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
@@ -14,7 +15,8 @@
 
 <body>
 <div class="wrapper">
-  <div class="circle" id="circle">What words describe your questions, concerns and issues with Climate Change?</div>
+
+  <div class="box2"><div class="circle" id="circle"><div id="circle-text">What words describe your questions, concerns and issues with Climate Change?</div></div></div>
    <div class="box1">
     <div id="word1" class="word" draggable="true"> Resigned </div>
     <div id="word2" class="word" draggable="true"> Hopeless</div>
@@ -28,8 +30,15 @@
     <div id="word10" class="word" draggable="true">Numb</div>
     <div id="word11" class="word" draggable="true">Unphased </div>
     <div id="word12" class="word" draggable="true">Overwhelmed</div>
-   </div>
+   <form class="form-inline" onsubmit="return false;" method="post" name="wordForm">
+   <input type="text" name="newWord" placeholder="Add another word" id="newWord">
+  <!-- <input type="submit" id="submit" name="submit" value="Add another word" onclick="addWord()" /> -->
+</form>
 </div>
+</div>
+<script>
+
+</script>
 <script src="js/gw_words.js"></script>
 </body>
 

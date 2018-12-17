@@ -1,6 +1,5 @@
 
 var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
 var closeModal = document.getElementsByClassName("close")[0];
 var answers = document.getElementsByClassName("container2")[0];
 var choices = document.getElementsByClassName("container1")[0];
@@ -15,13 +14,8 @@ var matches = [];
 
 $(answers).hide();
 $(choices).hide();
+$(closeModal).hide();
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
 closeModal.onclick = function() {
     var count = 1;
     $(".choices").empty();
@@ -41,20 +35,14 @@ closeModal.onclick = function() {
   
     setTimeout(function(){ $(answers).fadeIn(2000); }, 1000);
 
-    modal.style.display = "none";
-    btn.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    $(".modal-content").css("margin-top", "250px")
+    $(".modal-content").css("border", "1px solid #888");
+    $(closeModal).hide();
 }
 
 function isInArray(value, array) {
 	if (array.indexOf(value) > -1){
-		// $( "span:contains('" + value + "')").css( "color", "#F38B00" );
-		$( "span:contains('" + value + "')").addClass("orange");
+	  $( "span:contains('" + value + "')").addClass("orange");
 
 	}
   return array.indexOf(value) > -1;
@@ -69,8 +57,10 @@ $('.top40').on('click', function(event) {
     } else {
     	arr = arr.filter(el => el !== $(event.target).text());	
     }
-
-    
-    // console.log(arr, answerArr);
+    if (arr.length == 5){
+    console.log("there's some data");
+     $(closeModal).fadeIn(1000);
+    } 
 });
+
 

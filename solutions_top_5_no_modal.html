@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="css/top_5.css" rel="stylesheet">
+    <link href="css/top_5_no_modal.css" rel="stylesheet">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
@@ -16,8 +16,6 @@
     <div class="container">
         <h2>Guess the top 5 Drawdown Solutions</h2>
 
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Open Solutions</button>
         <br>
         <br>
 
@@ -40,33 +38,23 @@
         </div>
 
         <!-- The Modal -->
-        <div id="myModal" class="modal">
+       <!--  <div id="myModal" class="modal"> -->
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <h3 align="center"> Top 40 Drawdown Solutions </h3>
+                <p> Can you guess the top 5 Drawdown Solutions? Click on 5 solutions below to test your knowledge!</p>
+                <hr/>
 
-                <h3 class="sector_title"> Buildings and Cities</h3>
+                <h4 class="sector_title"> Buildings and Cities</h4>
                 <div class="wrapper top40">
 
                     <div> District Heating </div>
                     <div> Insulation </div>
                     <div> LED Lighting (Household) </div>
-                    <!-- <div> Heat Pumps </div>
-                    <div> LED Lighting (Commercial) </div>
-                    <div> Building Automation </div>
-                    <div> Walkable Cities </div>
-                    <div> Smart Thermostats </div>
-                    <div> Landfill Methane </div>
-                    <div> Bike Infrastructure </div>
-                    <div> Smart Glass </div>
-                    <div> Water Distribution </div>
-                    <div> Green Roofs </div>
-                    <div> Net Zero Buildings </div>
-                    <div> Retrofitting </div>
- -->
+    
                 </div>
-                <h3 class="sector_title"> Energy</h3>
+                <h4 class="sector_title"> Energy</h4>
                 <div class="wrapper top40">
 
                     <div> Wind Turbines (Onshore) </div>
@@ -79,18 +67,8 @@
                     <div> Wave and Tidal </div>
                     <div> Methane Digesters (Large) </div>
                     <div> Biomass </div>
-                   <!--  <div> Solar Water </div>
-                    <div> In-Stream Hydro </div>
-                    <div> Cogeneration </div>
-                    <div> Methane Digesters (Small) </div>
-                    <div> Waste-to-Energy </div>
-                    <div> Micro Wind </div>
-                    <div> Energy Storage (Distributed) </div>
-                    <div> Energy Storage (Utilities) </div>
-                    <div> Grid Flexibility </div>
-                    <div> Microgrids </div> -->
                 </div>
-                <h3 class="sector_title"> Food </h3>
+                <h4 class="sector_title"> Food </h4>
                 <div class="wrapper top40">
 
                     <div> Reduced Food Waste </div>
@@ -105,14 +83,8 @@
                     <div> Farmland Restoration </div>
                     <div> Improved Rice Cultivation </div>
                     <div> Multistrata Agroforestry </div>
-                    <!-- <div> System of Rice Intensification </div>
-                    <div> Composting </div>
-                    <div> Nutrient Management </div>
-                    <div> Farmland Irrigation </div>
-                    <div> Biochar </div> -->
-
                 </div>
-                <h3 class="sector_title"> Land Use </h3>
+                <h4 class="sector_title"> Land Use </h4>
                 <div class="wrapper top40">
 
                     <div> Tropical Forests </div>
@@ -121,50 +93,38 @@
                     <div> Afforestation </div>
                     <div> Bamboo </div>
                     <div> Forest Protection </div>
-                    <!-- <div> Indigenous Peoples’ Land Management </div>
-                    <div> Perennial Biomass </div>
-                    <div> Coastal Wetland </div> -->
                 </div>
-                <h3 class="sector_title"> Materials </h3>
+                <h4 class="sector_title"> Materials </h4>
                 <div class="wrapper top40">
 
                     <div> Refrigerant Management </div>
                     <div> Alternative Cement </div>
-                    <!-- <div> Water Saving - Home </div>
-                    <div> Bioplastic </div>
-                    <div> Household Recycling </div>
-                    <div> Industrial Recycling </div>
-                    <div> Recycled Paper </div> -->
                 </div>
 
-                <h3 class="sector_title"> Transport </h3>
+                <h4 class="sector_title"> Transport </h4>
                 <div class="wrapper top40">
                     <div> Electric Vehicles </div>
                     <div> Ships </div>
                     <div> Mass Transit </div>
                     <div> Trucks </div>
                     <div> Airplanes </div>
-                    <!-- <div> Cars </div>
-                    <div> Telepresence </div>
-                    <div> High-speed Rail </div>
-                    <div> Electric Bikes </div>
-                    <div> Trains </div>
-                    <div> Ridesharing </div>
- -->
                 </div>
-                <h3 class="sector_title"> Women and Girls </h3>
+                <h4 class="sector_title"> Women and Girls </h4>
                 <div class="wrapper top40">
                     <div> Educating Girls </div>
                     <div> Family Planning </div>
-                    <!-- <div> Women Smallholders </div> -->
                 </div>
+                <br>
+                <span class="close">&times;Done</span>
+                <br>
+                <br>
 
             </div>
         </div>
 
-    </div>
+    <!-- </div> -->
     <hr>
-    <script src="js/top_5.js"></script>
+    <script src="js/top_5_no_modal.js"></script>
 </body>
 
 </html>

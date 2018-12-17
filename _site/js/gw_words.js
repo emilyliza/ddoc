@@ -4,6 +4,35 @@ var draggables = document.querySelectorAll(".word");
 var draggable;
 
 var offsetx = null, offsety = null;
+
+var count = 30;
+
+var input = document.getElementById("newWord");
+
+input.addEventListener("keyup", function(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    addWord();
+  }
+});
+
+function addWord(element) {
+   var word = document.getElementById('newWord').value;
+   var circle = document.getElementById('circle');
+   $(circle).append('<div id="word'+ count + '"' + 'class="word green" draggable="true">'+ word + '</div>');
+   var newWord = document.getElementById('word' + count);
+   newWord.addEventListener("dragstart", function (ev){
+      ev.dataTransfer.setData("srcId", ev.target.id);
+
+      draggable = ev.target;
+
+      $(draggable).addClass("grey"); 
+      drag(draggable, event);
+
+   });
+   count ++;
+   document.getElementById("newWord").value = "";
+}
    
 function drag(target, event) {
    if (!target.draggable) return;
@@ -44,7 +73,7 @@ dropTarget.addEventListener("drop", function (ev){
    let target = ev.target;
    let srcId = ev.dataTransfer.getData("srcId");
    $(draggable).removeClass("grey");
-   // console.log("where are you", srcId);
+   
 
 let droppable = target.classList.contains("circle");   
 let returndrop = target.classList.contains("box1");

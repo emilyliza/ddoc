@@ -1,19 +1,19 @@
 
 var modal = document.getElementById('myModal');
-var choiceTitle = document.getElementById('choiceTitle');
 var btn = document.getElementById("myBtn");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var closeModal = document.getElementsByClassName("close")[0];
 var answers = document.getElementsByClassName("container2")[0];
 var choices = document.getElementsByClassName("container1")[0];
+var answerArr = [];
+
+$(".answer").each(function() {
+    answerArr.push($(this).text());
+});
 
 var arr = [];
-// answers.style.display = "none";
-// choiceTitle.style.display = "none";
-// choices.style.display = "none";
+var matches = [];
 
 $(answers).hide();
-$(choiceTitle).hide();
 $(choices).hide();
 
 // When the user clicks the button, open the modal 
@@ -22,12 +22,13 @@ btn.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+closeModal.onclick = function() {
     var count = 1;
     $(".choices").empty();
     if (arr.length){
      for (var i = 0; i < arr.length; i++) {
-    	 $(".choices").append("<div>" + count + ". " + arr[i] + "</div>");
+    	 $(".choices").append("<div>" + count + ". " + "<span>" + arr[i] + "</span></div>");
+    	 isInArray(arr[i], answerArr);
     	 count = count + 1;
       }
     } else {
@@ -35,15 +36,11 @@ span.onclick = function() {
     }
 
     $(".top40 > div.grey").removeClass("grey");
-    
-		$(choiceTitle).fadeIn(1000);
+  
 		$(choices).fadeIn(1000);
   
     setTimeout(function(){ $(answers).fadeIn(2000); }, 1000);
 
-    // choiceTitle.style.display = "block";
-    // answers.style.display = "block";
-    // choices.style.display = "block";
     modal.style.display = "none";
     btn.style.display = "none";
 }
@@ -54,11 +51,26 @@ window.onclick = function(event) {
     }
 }
 
+function isInArray(value, array) {
+	if (array.indexOf(value) > -1){
+		// $( "span:contains('" + value + "')").css( "color", "#F38B00" );
+		$( "span:contains('" + value + "')").addClass("orange");
+
+	}
+  return array.indexOf(value) > -1;
+}
+
 $('.top40').on('click', function(event) {
     $(event.target).toggleClass("grey");
-    if ($(event.target).hasClass("grey")) {	
-     arr.push($(event.target).text());
+    if ($(event.target).hasClass("grey") && (arr.length < 5)) {	
+     var choice = $(event.target).text().trim();	
+     arr.push(choice);
+     isInArray(choice, answerArr);
     } else {
     	arr = arr.filter(el => el !== $(event.target).text());	
     }
+
+    
+    // console.log(arr, answerArr);
 });
+

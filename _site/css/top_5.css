@@ -38,13 +38,6 @@
 }
 /** {box-sizing: border-box;}*/
 
-.wrapper {
-  /*border: 2px solid #f76707;
-  border-radius: 5px;
-  background-color: #fff4e6;*/
-  /*width: 600px;*/
-}
-
 .wrapper > div {
   border: 2px solid #F38B00;
   border-radius: 5px;
@@ -92,4 +85,7 @@
   width: 300px;
   float:right;
   padding-right: 10px;
+}
+.orange {
+  color: #F38B00 !important;
 }
