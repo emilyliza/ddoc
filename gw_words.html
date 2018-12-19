@@ -10,30 +10,36 @@
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
       <link href="css/gw_words.css" rel="stylesheet"> 
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="js/jquery_touch_punch.js"></script>
   </head>
 
 <body>
-<div class="wrapper">
+<div class="container">
 
-  <div class="box2"><div class="circle" id="circle"><div id="circle-text">What words describe your questions, concerns and issues with Climate Change?</div></div></div>
-   <div class="box1">
-    <div id="word1" class="word" draggable="true"> Resigned </div>
-    <div id="word2" class="word" draggable="true"> Hopeless</div>
-    <div id="word3" class="word" draggable="true"> Energized </div>
-    <div id="word4" class="word" draggable="true"> Empowered </div>
-    <div id="word5" class="word" draggable="true"> Hopeful</div>
-    <div id="word6" class="word" draggable="true"> Triggered</div>
-    <div id="word7" class="word" draggable="true"> Fascinated</div>
-    <div id="word8" class="word" draggable="true"> Engaged</div>
-    <div id="word9" class="word" draggable="true"> Fascinated</div>
-    <div id="word10" class="word" draggable="true">Numb</div>
-    <div id="word11" class="word" draggable="true">Unphased </div>
-    <div id="word12" class="word" draggable="true">Overwhelmed</div>
+<div class="flex-grid">
+  <div class="col" id="circleBox"><div id="circleText"><div class="circleTitle">What words describe your feelings around Climate Change?</div></div>
+
+</div>
+  <div id="wordBox" class="col wordBox">
+    <div class="word"> Resigned </div>
+    <div class="word"> Hopeless</div>
+    <div class="word"> Energized </div>
+    <div class="word"> Empowered </div>
+    <div class="word"> Hopeful</div>
+    <div class="word"> Triggered</div>
+    <div class="word"> Fascinated</div>
+    <div class="word"> Engaged</div>
+    <div class="word"> Fascinated</div>
+    <div class="word">Numb</div>
+    <div class="word">Unphased </div>
+    <div class="word">Overwhelmed</div>
    <form class="form-inline" onsubmit="return false;" method="post" name="wordForm">
    <input type="text" name="newWord" placeholder="Add another word" id="newWord">
-  <!-- <input type="submit" id="submit" name="submit" value="Add another word" onclick="addWord()" /> -->
 </form>
+</div>
 </div>
 </div>
 <script>

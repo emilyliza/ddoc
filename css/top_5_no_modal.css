@@ -3,6 +3,7 @@
 
 /* Modal Content */
 .modal-content {
+    display: flex;
     background-color: #fff;
     margin: auto;
     padding: 20px;

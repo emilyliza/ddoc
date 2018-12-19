@@ -1,0 +1,72 @@
+
+.flex-grid {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   flex-wrap: wrap;
+ }
+.left {
+   width: 50%;
+   vertical-align:top;
+   min-width: 200px;
+}
+.right {
+   width: 50%;
+   vertical-align:top;
+   min-width: 200px;
+   padding-left: 15px;
+}     
+#solutionsForm {
+	border: 1px solid #e6e6e6;
+	width: 100%;
+	padding: 30px;
+	border-radius: 5px;
+}
+ .grid-col {
+ 	display: inline-block;
+ }
+.contChoices {
+  width: 46%;
+  float: left;
+  border: 1px solid #e6e6e6;
+  padding: 0 10px 20px 20px;;
+}
+.contAnswers {
+  width: 48%;
+  float:right;
+  border: 1px solid #e6e6e6;
+  padding:0 10px 20px 20px;
+  margin-left: 40px;
+}
+.orange {
+  color: #F38B00 !important;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #e6e6e6;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

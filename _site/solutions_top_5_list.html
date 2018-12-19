@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 Drawdown Solutions</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="css/top_5_list.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container cover">
+  <h2>Guess the top 5 Drawdown Solutions</h2>
+  <br>
+  <br>
+<div class="flex-grid">
+  <div class="contChoices">
+            <h3 id="choiceTitle"> Your Solution Choices </h3>
+
+            <div class="choices" style="float: left;">
+            </div>
+        </div>
+
+        <div class="contAnswers">
+            <div class="top5">
+                <h3>Top 5 Solutions</h3>
+                <div>1. <span class="answer">Refrigerant Management</span></div>
+                <div>2. <span class="answer">Wind Turbines (Onshore)</span></div>
+                <div>3. <span class="answer">Reduced Food Waste</span></div>
+                <div>4. <span class="answer">Plant-Rich Diet</span> </div>
+                <div>5. <span class="answer">Tropical Forests</span></div>
+            </div>
+        </div>
+</div>
+
+<div class="form-container">
+<h3 align="center"> Top 40 Drawdown Solutions </h3>
+<p> Can you guess the top 5 Drawdown Solutions? Click on 5 solutions below to test your knowledge!</p>
+<hr/>         
+<form id="solutionsForm" onsubmit="return false">
+  <div class="flex-grid">
+  <div class="left">
+
+  <div class="grid-col">
+  <h3>Buildings and Cities</h3>
+         <div class="checkbox">
+           <input type="checkbox" title="This is the text of the tooltip" id="heating" value="District Heating">
+           <label for="heating">District Heating</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="insulation" value="Insulation">
+           <label for="insulation">Insulation</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="geothermal" value="Geothermal">
+           <label for="geothermal">LED Lighting (Household)</label>
+         </div>
+</div>
+<div class="grid-col">
+  <h3>Energy</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="turbinesOnshore" value="Wind Turbines (Onshore)">
+           <label for="turbinesOnshore">Wind Turbines (Onshore)</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="solarFarms" value="Solar Farms">
+           <label for="solarFarms">Solar Farms</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="rooftopSolar" value="Rooftop Solar">
+           <label for="rooftopSolar">Rooftop Solar</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="geothermal" value="Geothermal">
+           <label for="geothermal">Geothermal</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="nuclear" value="Nuclear">
+           <label for="nuclear">Nuclear</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="turbinesOffshore" value="Wind Turbines (Offshore)">
+           <label for="turbinesOffshore">Wind Turbines (Offshore)</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="concentratedSolar" value="Concentrated Solar">
+           <label for="concentratedSolar">Concentrated Solar</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="wave" alue="Wave and Tidal">
+           <label for="wave">Wave and Tidal</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="methane" value="Methane Digesters (Large)">
+           <label for="methane">Methane Digesters (Large)</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="biomass" value="Biomass">
+           <label for="biomass">Biomass</label>
+         </div> 
+    </div>
+    <div class="grid-col">
+    <h3>Materials</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="fridge" value="Refrigerant Management">
+           <label for="fridge">Refrigerant Management</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="cement" value="Alternative Cement">
+           <label for="cement">Alternative Cement</label>
+         </div>
+      </div>
+    <div class="grid-col">
+    <h3>Land Use</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="tropical" value="Tropical Forests">
+           <label for="tropical">Tropical Forests</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="temperate" value="Temperate Forests">
+           <label for="temperate">Temperate Forests</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="peatlands" value="Peatlands">
+           <label for="peatlands">Peatlands</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="afforestation" value="Afforestation">
+           <label for="afforestation">Afforestation</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="bamboo" value="Bamboo">
+           <label for="bamboo">Bamboo</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="forests" value="Forest Protection">
+           <label for="forests">Forest Protection</label>
+         </div> 
+      </div>
+  </div>
+
+    <div class="right">
+      <div class="grid-col">     
+      <h3>Food</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="foodWaste" value="Reduced Food Waste">
+           <label for="foodWaste">Reduced Food Waste</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="plantDiet" value="Plant-Rich Diet">
+           <label for="plantDiet">Plant-Rich Diet</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="silvopasture" value="Silvopasture">
+           <label for="silvopasture">Silvopasture</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="regenAg" value="Regenerative Agriculture">
+           <label for="regenAg">Regenerative Agriculture</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="stapleTrees" value="Tropical Staple Trees">
+           <label for="stapleTrees">Tropical Staple Trees</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="consAg" value="Conservation Agriculture">
+           <label for="consAg">Conservation Agriculture</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="treeIntercropping" value="Tree Intercropping">
+           <label for="treeIntercropping">Tree Intercropping</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="grazing" value="Managed Grazing">
+           <label for="grazing">Managed Grazing</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="cookstoves"value="Clean Cookstoves">
+           <label for="cookstoves">Clean Cookstoves</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="farmRestoration" value="Farmland Restoration">
+           <label for="farmRestoration">Farmland Restoration</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="rice" value="Improved Rice Cultivation">
+           <label for="rice">Improved Rice Cultivation</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="multiAg" value="Multistrata Agroforestry">
+           <label for="multiAg">Multistrata Agroforestry</label>
+         </div> 
+    </div>
+    
+    <div class="grid-col">
+    <h3>Transport</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="electricVehicles" value="Electric Vehicles">
+           <label for="electricVehicles">Electric Vehicles</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="ships" value="Ships">
+           <label for="ships">Ships</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="transit" value="Mass Transit">
+           <label for="transit">Mass Transit</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="trucks" value="Trucks">
+           <label for="trucks">Trucks</label>
+         </div> 
+         <div class="checkbox">
+           <input type="checkbox" id="planes" value="Airplanes">
+           <label for="planes">Airplanes</label>
+         </div>
+       </div>
+
+     <div class="grid-col">  
+    <h3>Women and Girls</h3>
+         <div class="checkbox">
+           <input type="checkbox" id="girls" value="Educating Girls">
+           <label for="girls">Educating Girls</label>
+         </div>
+         <div class="checkbox">
+           <input type="checkbox" id="family" value="Family Planning">
+           <label for="family">Family Planning</label>
+         </div>
+       </div>
+     <input type="submit" class="submitChoices" value="Submit" onclick="choices();">
+   </div>
+   </div>
+   </form> 
+</div>
+ <script src="js/top_5_list.js"></script>  
+</body>
+
+</html>

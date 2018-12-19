@@ -1,99 +1,91 @@
 
-/* Style the input fields */
+/*flex container has 2 columns and includes circle and word list*/
+
+.flex-grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 10px;
+    flex: 1 1 260px;
+    
+}
+
+.col:first-child {
+    border: 8px solid #636466;
+    margin: 10px;
+    border-radius: 50%; 
+    justify-content: center;
+    position: relative;
+    min-width: 270px;
+}
+
+.col:last-child {
+    max-width: 280px;
+}
+.col:first-child:before {
+    content:'';
+    padding-top:100%;
+    display:block;
+}
+
+#circleText {
+    position:  absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    text-align: center;
+    padding: 15px;
+}
+
+.circleTitle{
+   margin: 10%;
+   padding: 10px;
+}
+
+.wordBox{
+    padding: 35px 0 0 30px;
+}
+
 .form-inline input {
-  vertical-align: middle;
-  margin: 10px 10px 5px 0;
-  padding: 5px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  width: 167px;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+    vertical-align: middle;
+    margin: 10px 10px 5px 0;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 167px;
+    border-radius: 5px;
 }
 
-div.grey {
-    background: #636466;
-}
-div.green {
-    background: #88c216;
-}
-.wrapper{
-  width: 100%;
-  padding:10px;
-}
-
-.box2 {
-  width: 60%;
-}
-#circle {
-      width: 400px;
-      height: 400px;
-      -webkit-border-radius: 200px;
-      -moz-border-radius: 200px;
-      border-radius: 200px;
-      border: 10px solid #636466;
-      text-align: center;
-      padding: 50px;
-      font-weight: 14px;
-      /*float: left;*/
-      /*margin: 0 60px 10px 0;*/
-}
-#circle-text {
-  width: 300px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-}
-.box1 {
-  width: 40%;
-}
-
-@media all and (max-width : 48em){
-    .box1{ width: 100%; padding: 10px;}
-    .box2{width: 100%; padding: 10px;}
-    #circle {
-      float: none;
-      display: block;
-      margin: auto;
-      width: 300px;
-      height: 300px;
-      -webkit-border-radius: 150px;
-      -moz-border-radius: 150px;
-      border-radius: 150px;
-      border: 5px solid #636466;
-      text-align: center;
-      padding: 10px;
-      font-weight: 10px;
-      margin: 0 20px 20px 0;
-    }
-    #circle-text {
-      width: 180px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 15px;
-    }
-}
 .word {
     background-color: #F38B00;
     color: white;
     padding: 4px;
     margin: 4px;
     width: auto;
-    height:auto;
+    height: auto;
     border-radius: 5px;
     display: inline-block;
-
+    cursor: move;
 }
+
 .word:before {
     content: '\2722';
     padding-right: 2px;
 }
+
 .green:before {
-   content: '\2713'; 
+    content: '\2713';
+}
+
+div.grey {
+    background: #636466;
+}
+
+div.green {
+    background: #88c216;
 }
