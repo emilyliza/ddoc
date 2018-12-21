@@ -1,72 +1,53 @@
+/*testing*/
 
 .flex-grid {
-   display: flex;
-   flex-direction: row;
-   width: 100%;
-   flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
  }
 .left {
-   width: 50%;
-   vertical-align:top;
-   min-width: 200px;
+  width: 50%;
+  vertical-align:top;
+  min-width: 200px;
+  padding-right: 15px;
 }
 .right {
-   width: 50%;
-   vertical-align:top;
-   min-width: 200px;
-   padding-left: 15px;
+  width: 50%;
+  vertical-align:top;
+  min-width: 200px;
 }     
 #solutionsForm {
-	border: 1px solid #e6e6e6;
 	width: 100%;
-	padding: 30px;
-	border-radius: 5px;
+	padding: 0 30px 0 30px;
 }
- .grid-col {
+.grid-col {
  	display: inline-block;
- }
+}
+.grid-col > h3{
+  padding-bottom: 10px;
+}
 .contChoices {
-  width: 46%;
-  float: left;
-  border: 1px solid #e6e6e6;
-  padding: 0 10px 20px 20px;;
+  width: 45%;
+  float: right;
+  font-weight: 430;
+  background-color: #f8f8f8;
+  border: 2px solid #e6e6e6;
+  padding: 10px 10px 20px 20px;
+  border-radius: 5px;
+  min-width: 200px;
 }
 .contAnswers {
-  width: 48%;
-  float:right;
-  border: 1px solid #e6e6e6;
-  padding:0 10px 20px 20px;
-  margin-left: 40px;
+  width: 45%;
+  float:left;
+  font-weight: 430;
+  background-color: #f8f8f8;
+  border: 2px solid #e6e6e6;
+  padding: 10px 10px 20px 20px;
+  margin-right: 40px;
+  border-radius: 5px;
+  min-width: 200px;
 }
 .orange {
   color: #F38B00 !important;
-}
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: auto;
-  background-color: #e6e6e6;
-  color: black;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  left: 105%;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
 }
