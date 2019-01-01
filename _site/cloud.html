@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+   <link href="css/cloud.css" rel="stylesheet">
+</head>  
+<body>
+  <table class="table2">
+    <tr>
+      <td>
+    <div class="cloud">
+    <div id="wordCloudBox"></div>
+  </div>
+    </td>
+    <td>
+    <div>
+    <button onclick="showNewWords(myWordCloud)">Click me to just draw cloud</button>
+    </div>
+    <form id="testForm">
+  Word One:<br>
+  <input type="text" name="word1"><br>
+  Word Two:<br>
+  <input type="text" name="word2"><br>
+  Word Three:<br>
+  <input type="text" name="word3"><br>
+  Word Four:<br>
+  <input type="text" name="word4"><br>
+  Word Five:<br>
+  <input type="text" name="word5">
+  <br>
+  <input type="submit" value="Send data to sheet and draw cloud">
+</form>
+</td>
+</tr>
+</table>
+<script src="js/cloud.js"></script>    
+</body>
+
+</html>
+    
+
+

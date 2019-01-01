@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+   <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
     <title>Drawdown Reflections</title>
 
@@ -11,16 +12,14 @@
 </head>
 
 <body>
-<div class="wrapper">
-<div class="journalText"></div>
-<h3>Testing </h3> 
+  <h3>Testing </h3> 
+<!-- <div class="wrapper"> -->
 <div class="journalForm"> 
-<textarea cols="40" rows="15" class="notebook" name="journal" id="saveJournal"></textarea>  
-
+<textarea class="notebook" name="journal" id="saveJournal"></textarea>  
 <button class="saveButton" onclick="save_data()" type="button">Save</button>
 <button class="editButton" onclick="edit_data()" type="button">Edit</button>
 </div>
-</div>
+<!-- </div> -->
 <script src="js/journal_entry.js"></script>    
 </body>
 
