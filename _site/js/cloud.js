@@ -1,31 +1,35 @@
+var data = [];
 var words = [];
-var myWordCloud = wordCloud('#wordCloudBox');
+var request, 
+    inputsArr;
 
-$.getJSON("https://spreadsheets.google.com/feeds/cells/1aEuuC49_hTMEIsycU2xLL0m9eITOpEXJyoodS_wckNE/default/public/values?alt=json", function(data) {
-    for (var i = 0; i < data.feed.entry.length; i++){
-        words2.push(data.feed.entry[i]['gs$cell']['$t']);
+var newWords = [];
+
+function getAllWords() {
+ //empyt data array   
+ data = [];  
+ //get new data and populate data array
+ $.getJSON("https://spreadsheets.google.com/feeds/cells/1aEuuC49_hTMEIsycU2xLL0m9eITOpEXJyoodS_wckNE/default/public/values?alt=json", function(d) {
+    for (var i = 0; i < d.feed.entry.length; i++){
+        data.push(d.feed.entry[i]['gs$cell']['$t']);
     }
+    //sort and add word counts to data array
     count();
-    showNewWords(myWordCloud);
-    console.log(words);
    });
-
-
-var words2 = [];
-
-var test2 = ["earth", "fear"];
+}
 
 function count() {
-    words2.sort();
+    words = [];
+    data.sort();
 
     var current = null;
     var cnt = 0;
-    for (var i = 0; i < words2.length; i++) {
-        if (words2[i] != current) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i] != current) {
             if (cnt > 0) {
                 words.push({ text: current, count: cnt});
             }
-            current = words2[i];
+            current = data[i];
             cnt = 1;
         } else {
             cnt++;
@@ -34,12 +38,13 @@ function count() {
     if (cnt > 0) {
         words.push({ text: current, count: cnt});
     }
+
+    showNewWords(myWordCloud);
+    showNewWords(myWordCloud);
 }
 
-var request, 
-    inputsArr;
 
-// Bind to the submit event of our form
+// form submit event 
 $("#testForm").submit(function(event){
 
     // Prevent default posting of form
@@ -53,8 +58,13 @@ $("#testForm").submit(function(event){
     var $inputs = $form.find("input,text");
     var serializedData = $form.serialize();
 
-    // inputsArr = $form.serializeArray();
-    // console.log(inputsArr);
+    inputsArr = $form.serializeArray();
+    newWords = [];
+
+    inputsArr.map(function(d) {
+        newWords.push(d.value);
+        return newWords;
+    })
 
     // disable the inputs for the duration of the Ajax request.
     $inputs.prop("disabled", true);
@@ -87,13 +97,8 @@ $("#testForm").submit(function(event){
 
    document.getElementById("testForm").reset();
 
-   $.getJSON("https://spreadsheets.google.com/feeds/cells/1aEuuC49_hTMEIsycU2xLL0m9eITOpEXJyoodS_wckNE/default/public/values?alt=json", function(data) {
-    for (var i = 0; i < data.feed.entry.length; i++){
-        words.push(data.feed.entry[i]['gs$cell']['$t']);
-    }
-    count();
-    showNewWords(myWordCloud);
-   });
+   getAllWords();
+
 });
 
 // var input_color = "#000000";
@@ -113,8 +118,10 @@ $("#testForm").submit(function(event){
 // Encapsulate the word cloud functionality
 function wordCloud(selector) {
 
-    var fill = d3.scale.category20();
-    
+    var fill = d3.scale.category20c();
+    var color = d3.scaleOrdinal() 
+        .range(["#000000"]);
+
 
     //Construct the word cloud's SVG element
     var svg = d3.select(selector).append("svg")
@@ -132,13 +139,15 @@ function wordCloud(selector) {
     //Draw the word cloud
     function draw(words) {
         var cloud = svg.selectAll("g text")
-                        .data(words, function(d) { return d.text; })         
-
+                        .data(words)         
+        console.log("in the draw function");
         //Entering words
         cloud.enter()
             .append("text")
             .style("font-family", "Arial")
-            .style("fill", function(d, i) {if (test2.indexOf(d.text) > -1) {return "black"; } else {return fill(i);} })
+            .attr("class", function(d) {
+                    if (newWords.indexOf(d.text) > -1) { return ("userWords")}})   
+            .style("fill", function(d, i) { if (newWords.indexOf(d.text) > -1) {console.log (d.text); return color(i); } else if (newWords.indexOf(d.text) === -1){ return fill(i);} })
             // .style("fill", function(d, i) { return fill(i); })
             .attr("text-anchor", "middle")
             .attr('font-size', 1)
@@ -147,11 +156,18 @@ function wordCloud(selector) {
         //Entering and existing words
         cloud
             .transition()
-                .duration(600)
+                .duration(2600)
+                .delay(function(d) { if (newWords.indexOf(d.text) > -1) {return 40;} else if (newWords.indexOf(d.text) === -1) {return 1400;}})
                 .style("font-size", function(d) { return d.size + "px"; })
+                // .attr("delay", function(d,i){if (newWords.indexOf(d.text) > -1) { console.log("yes sirree", i); return 1000*i}})
                 .attr("transform", function(d) {
-                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    if (newWords.indexOf(d.text) > -1) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + 0 + ")"} else {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";}
                 })
+                // .attr("transform", function(d) {
+                //     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                // })
                 .style("fill-opacity", 1);
 
         //Exiting words
@@ -163,7 +179,6 @@ function wordCloud(selector) {
                 .remove();
     }
 
-
     //Use the module pattern to encapsulate the visualisation code. We'll
     // expose only the parts that need to be public.
     return {
@@ -173,9 +188,9 @@ function wordCloud(selector) {
         //The outside world will need to call this function, so make it part
         // of the wordCloud return value.
         update: function(words) {
-            d3.layout.cloud().size([380, 380])
+            d3.layout.cloud().size([420, 420])
                 .words(words)
-                // .padding(2)
+                .padding(2)
                 // .rotate(function() { return ~~(Math.random() * 2) * 90; })
                 // .rotate(function() { return ~~(Math.random() * 6 - 3) * 30; })
                 // .rotate(function() { return ~~(Math.random() * 6 - 3) * 30; })
@@ -194,6 +209,7 @@ function wordCloud(selector) {
 // creating an array of words and computing a random size attribute.
 function getWords(i) {
     var size = d3.scaleLinear().range([0, 13]).domain([0, d3.max(words, d => d.count)]);
+    console.log("here are the words", words);
     return words
             // .replace(/[!\.,:;\?]/g, '')
             // .split(' ')
@@ -211,7 +227,6 @@ function showNewWords(vis, i) {
     vis.update(getWords(i ++ % words.length));
     // setTimeout(function() { showNewWords(vis, i + 1)}, 2000)
 }
-
-
+var myWordCloud = wordCloud('#wordCloudBox');
 
 

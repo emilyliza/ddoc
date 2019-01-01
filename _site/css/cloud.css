@@ -1,6 +1,9 @@
 .table2 {
 	width: 100%;
 }
+.userWords {
+ font-weight: 20px;
+}
 /*#wordCloudBox {
 	width: 500px;
 	height: 400px;
